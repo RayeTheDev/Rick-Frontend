@@ -84,7 +84,7 @@
 }
 @media only screen and (max-width: 960px) {
     .heviinBoov, .containerBoov {
-        width: 100%;
-        height: none;
+        width: 80%;
+        height: 100%;
     }
 }

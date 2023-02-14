@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./controllers/Header";
 import { Home } from "./controllers/Home";
 import { Menu } from "./controllers/Menu";
-import {useEffect}from 'react'
+import { useEffect } from "react";
 
 function App() {
   return (
