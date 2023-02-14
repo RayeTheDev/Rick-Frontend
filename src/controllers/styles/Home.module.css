@@ -1,0 +1,90 @@
+.controller {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.light {
+  background-color: black;
+  height: 100%;
+}
+.background {
+  text-align: center;
+  object-fit: cover;
+  background-position: 100%;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.3;
+}
+.text {
+  position: absolute;
+}
+.contentContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+}
+.content2Container {
+  display: flex;
+  margin-top: 120px;
+  height: 446px;
+  width: 1100px;
+}
+.containerBoov {
+  background-color: black;
+  width: 446px;
+  height: 446px;
+}
+.heviinBoov {
+  width: 446px;
+  height: 446px;
+  border-radius: 20px;
+}
+.texts {
+  display: block;
+  padding-top: 45px;
+  padding-left: 61px;
+  width: 100vw;
+  height: 400px;
+  color: white;
+}
+.today {
+  height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0078f6;
+}
+.med {
+  display: flex;
+  align-items: center;
+  height: 43px;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  font-size: 36px;
+  font-weight: 800;
+}
+.name {
+  height: 130px;
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 54px;
+}
+@media only screen and (max-width: 1220px) {
+  .heviinBoov,
+  .containerBoov {
+    width: 372px;
+    height: 372px;
+  }
+  .content2Container {
+    width: 920px;
+  }
+}
+@media only screen and (max-width: 960px) {
+    .heviinBoov, .containerBoov {
+        width: 100%;
+        height: none;
+    }
+}

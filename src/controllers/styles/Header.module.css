@@ -1,0 +1,127 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 85px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 88vw;
+    height: 42px;
+}
+.menuIcon {
+    width: 27px;
+    height: 27px;
+    margin-right: 50px;
+    margin-left: 20px;
+    color: white;
+}
+.logoSearch {
+    display: flex;
+    align-items: center;
+    width: 370px;
+    height: 42px;
+}
+.logo {
+    width: 134px;
+    height: 18px;
+}
+.dash {
+    width: 1px;
+    height: 18px;
+    margin-left: 30px;
+    margin-right: 17px;
+    background-color: white;
+}
+.search {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    margin-left: 10px;
+}
+.searchIcon {
+    margin-top: 5px;
+    width: 21px;
+    height: 21px;
+    color: #cccccc
+}
+.input {
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 130px;
+    margin-left: 10px;
+    background-color:transparent;
+    outline: none;
+    color: rgb(104, 104, 104);
+    background-color: none;
+    border: 0px;
+}
+.nextTomorrow {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 42px;
+    margin-right: 70px;
+}
+.next {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(134, 134, 134);
+    font-family: 'SF Display', sans-serif;
+}
+.tech {
+    font-size: 13px;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+    color: white;
+}
+.tomorrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    margin-left: 15px;
+    margin-right: -1px;
+    border-radius: 50px;
+    border: 0px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(136, 136, 136);
+}
+.blue {
+    width: 7px;
+    height: 7px;
+    background-color: rgb(58, 58, 255);
+    margin-top: 3px;
+    margin-left: 8px;
+    border-radius: 50px;
+}
+@media only screen and (max-width: 835px) {
+    .nextTomorrow, .input {
+        display: none;
+    }
+    .header {
+        justify-content: end;
+    }
+    .logoSearch {
+        width: 235px;
+    }
+    .searchIcon {
+        color: white;
+        width: 25px;
+        height: 25px;
+        margin-top: 0px;
+    }
+    .tech {
+        display: none;
+      }
+}
