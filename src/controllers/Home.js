@@ -7,7 +7,11 @@ export const Home = () => {
     <div className={styles.controller}>
       <div className={styles.light}>
         <img className={styles.background} src={background}></img>
-        <div className={styles.text}>ahahah</div>
+      </div>
+      <div class={styles.geeks}>
+        <img
+          src="https://media.geeksforgeeks.org/wp-content/uploads/20200403151026/adblur_gfg.png"
+        />
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.content2Container}>
@@ -17,7 +21,9 @@ export const Home = () => {
           <div className={styles.texts}>
             <div className={styles.today}>ӨНӨӨДӨР</div>
             <div className={styles.med}>МЭДҮҮШГҮЙ</div>
-            <div className={styles.name}>"ӨГӨӨЖ БООВ" ТА ХЭВИЙН БООВОО ЭНДЭЭС АВНА УУ!</div>
+            <div className={styles.name}>
+              "ӨГӨӨЖ БООВ" ТА ХЭВИЙН БООВОО ЭНДЭЭС АВНА УУ!
+            </div>
           </div>
         </div>
       </div>
