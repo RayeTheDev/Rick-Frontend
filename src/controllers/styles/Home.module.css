@@ -3,21 +3,6 @@
   height: 100vh;
   position: relative;
 }
-.geeks {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.geeks img {
-  width: 100%;
-  transition: 0.5s all ease-in-out;
-}
-
-.geeks:hover img {
-  transform: scale(1.5);
-}
 .light {
   background-color: black;
   height: 100%;
@@ -35,7 +20,7 @@
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   top: 0px;
   left: 0px;
 }
@@ -47,7 +32,6 @@
 }
 .containerBoov {
   background-color: black;
-  overflow: hidden;
   width: 446px;
   height: 446px;
   margin: 0 auto;
@@ -59,7 +43,7 @@
   border-radius: 20px;
 }
 .heviinBoov:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 .texts {
   display: block;
@@ -92,6 +76,35 @@
   font-weight: 800;
   margin-bottom: 54px;
 }
+.carouselContainer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 500px;
+  width: 100vw;
+  top: 70%;
+}
+.div {
+  display: flex;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 70px;
+  width: 1700px;
+}
+.secondCarousel {
+  width: 100%;
+}
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 2px; */
+  border-radius: 10px;
+  margin-left: 30px;  
+  font-size: 100px;
+  background-color: green;
+}
+
 @media only screen and (max-width: 1220px) {
   .heviinBoov,
   .containerBoov {
@@ -120,5 +133,12 @@
 @media only screen and (max-width: 835px) {
   .containerBoov {
     display: none;
+  }
+  .med {
+    font-size: 30px;
+  }
+  .name {
+    width: 95vw;
+    font-size: 30px;
   }
 }

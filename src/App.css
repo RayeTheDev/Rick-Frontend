@@ -1,0 +1,7 @@
+.mantine-UnstyledButton-root,
+.mantine-Carousel-indicator,
+.mantine-p729w7 {
+  color: black;
+  background-color: black;
+  filter: invert(10);
+}
