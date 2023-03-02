@@ -1,0 +1,126 @@
+.go_signup{
+    display: none;
+}
+.login_style{
+    font-size: 6vw;
+    
+}
+.just{
+    display: flex;
+    justify-content: center;
+}
+.login_page{
+    height: 90vw;
+    width: 86vw;
+    background-color:  rgb(94, 172, 170);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    padding: 15px;
+}
+.intro_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input{
+    width: 100%;
+    height: 5.3vh;
+    border-radius: 15px;
+    border: 0;
+    padding-left: 15px;
+    font-size: 18px;
+    margin-top: 30px;
+    background-color:  rgb(222, 242, 241);
+}
+.btn_1{
+    height: 50px;
+    width: 180px;
+    border-radius: 30px;
+    font-size: 20px;
+    background-color: rgb(222, 242, 241);
+    margin-top: 20px;
+}
+.btn_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and ( min-width:770px){
+    .one{
+        display: flex;
+    }
+    .login_page{
+        width: 60vw;
+        height: 100%;
+        background-color: white;
+        padding: 0;
+    }
+    .go_signup{
+        width: 40vw;
+        height: 100vh;
+        background-color: rgb(94, 172, 170);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .intro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+    }
+    .intro_1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+    }
+    p{
+        color: white;
+    }
+    .new_font{
+        font-size: 4vw;
+    }
+    .sign_font{
+       padding: 3rem;
+       font-size: 3vw;
+    }
+    .btn_2{
+        height: 50px;
+        width: 180px;
+        border-radius: 30px;
+        background-color: white;
+        font-size: 20px;
+    }
+    .login_style{
+        color: black;
+        font-size: 4vw;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    input{
+        height: 45px;
+        width: 390px;
+        border-radius: 15px;
+        border: 0;
+        padding-left: 15px;
+        font-size: 18px;
+        background-color:  rgb(222, 242, 241);
+    }
+    .btn_1{
+        height: 50px;
+        width: 180px;
+        border-radius: 30px;
+        font-size: 20px;
+        background-color: rgb(94, 172, 170);
+    }
+
+}

@@ -1,0 +1,6 @@
+export * from "./Home"
+export * from "./Login"
+export * from "./Signup"
+export * from "./Footer"
+export * from "./Comment"
+export * from "./Review"

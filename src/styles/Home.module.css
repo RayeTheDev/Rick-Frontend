@@ -1,0 +1,134 @@
+p{
+    margin: 0;
+}
+h1{
+    margin: 0;
+}
+.back{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(170, 44, 44);
+
+}
+.center_img{
+    display: none;
+}
+.user_news{
+    padding-left: 4rem;
+    padding-top: 6rem;
+    display: flex;
+}
+.user_img{
+    height: 40px;
+    width: 40px;
+    border-radius:100% ;
+}
+.med{
+    color: rgba(255,255,255,0.5);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+    /* margin: 7px 0 0 0; */
+    text-transform: uppercase;
+    padding-left: 2rem;
+    font-size: 2.3rem;
+}
+h1{
+    color: white;
+    /* padding-left: 4rem; */
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    padding-left:2rem ;
+}
+.absoul{
+    padding-top: 20vh;
+}
+.user_news{
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+button{
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(190, 190, 189);
+}
+.news_card{
+    display: flex;
+    gap: 16px;
+    transform: translateX(300px);
+}
+
+
+@media screen and ( min-width:770px){
+    .news_card{
+        display: flex;
+        gap: 16px;
+        transform: translateX(300px);
+    }
+    
+    p{
+        margin: 0;
+    }
+    .back{
+        height: 100vh;
+        width: 100vw;
+        background-color: black;
+    }
+    .home_center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+    }
+    .container{
+        height: 50%;
+        width: 60%;
+        display: flex;
+        gap: 4rem;
+    }
+    .center_img{
+        height: 40vh;
+        width: 105vw;
+        border-radius: 30px;
+        display: block;
+        min-width: 200px;
+        /* background-image: url("https://quickbooks.intuit.com/oidam/intuit/sbseg/en_us/Blog/Illustration/operating-costs-header-image-us-en.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        display: inline-block;
+        max-inline-size: 50%;
+        block-size: auto; */
+ 
+    }
+    h1{
+        color: white;
+        /* padding-left: 4rem; */
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+    .med{
+        color: rgba(255,255,255,0.5);
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #fff;
+        margin: 7px 0 0 0;
+        text-transform: uppercase;
+    }
+    .user_news{
+        padding-left: 4rem;
+        padding-top: 6rem;
+        display: flex;
+    }
+    .user_img{
+        height: 40px;
+        width: 40px;
+        border-radius:100% ;
+    }
+    .user_name{
+        display: block;
+        padding-left: 1rem;
+    }
+    .absoul{
+        padding-top: 1px;
+    }
+}
