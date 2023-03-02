@@ -7,8 +7,8 @@ export const Login = () => {
       <div className={styles.login_page}>
         <div className={styles.intro_1}>
             <p className={styles.login_style}>Login to Your Account</p>
-            <input placeholder="email"></input>
-            <input placeholder="password"></input>
+            <input placeholder="email" className={styles.input}></input>
+            <input placeholder="password" className={styles.input}></input>
             <a href="#">forget password</a>
             <button className={styles.btn_1}>sign in</button>
             

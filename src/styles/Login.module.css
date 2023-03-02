@@ -25,8 +25,8 @@
     align-items: center;
     flex-direction: column;
 }
-input{
-    width: 100%;
+.input{
+    width: 50%;
     height: 5.3vh;
     border-radius: 15px;
     border: 0;
@@ -50,7 +50,7 @@ input{
 }
 
 
-@media screen and ( min-width:770px){
+@media only screen and ( min-width:770px){
     .one{
         display: flex;
     }
@@ -80,15 +80,14 @@ input{
         height: 100%;
         flex-direction: column;
     }
-    p{
-        color: white;
-    }
     .new_font{
         font-size: 4vw;
+        color: white;
     }
     .sign_font{
        padding: 3rem;
        font-size: 3vw;
+       color: white;
     }
     .btn_2{
         height: 50px;
@@ -106,7 +105,7 @@ input{
         align-items: center;
         padding-bottom: 0;
     }
-    input{
+    .input{
         height: 45px;
         width: 390px;
         border-radius: 15px;
