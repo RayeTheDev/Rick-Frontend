@@ -12,9 +12,6 @@
   justify-content: center;
 }
 
-.passContainer {
-  /* margin-top: 20px; */
-}
 .login_page {
   height: 90vh;
   width: 86vw;
@@ -52,8 +49,9 @@
   width: 460px;
 }
 .btn_1 {
-  height: 50px;
-  width: 180px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 140px;
   border-radius: 30px;
   font-size: 20px;
   font-weight: bold;
@@ -61,9 +59,9 @@
   color: white;
   cursor: pointer;
   transition: 100ms;
-  /* margin-top: 20px; */
 }
-.btn_1:active ,.btn_2:active{
+.btn_1:active,
+.btn_2:active {
   transform: scale(95%);
 }
 .btn_2 {
@@ -71,7 +69,12 @@
   justify-content: center;
   align-items: center;
 }
-
+.btn_1:hover {
+  background-color: rgb(4, 80, 196);
+}
+.btn_2:hover {
+  background-color: rgb(189, 197, 207);
+}
 @media screen and (min-width: 770px) {
   .one {
     display: flex;
@@ -95,22 +98,7 @@
   .intro {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-}
-.input{
-    width: 50%;
-    height: 5.3vh;
-    border-radius: 15px;
-    border: 0;
-    padding-left: 15px;
-    font-size: 18px;
-    margin-top: 30px;
-    background-color:  rgb(222, 242, 241);
-}
-.btn_1{
-=======
     align-items: flex-start;
-    gap: 25px;
   }
   .intro_1 {
     display: flex;
@@ -123,120 +111,43 @@
     color: white;
   }
   .new_font {
-    font-size: 50px;
+    font-size: 40px;
     padding-left: 3rem;
   }
   .sign_font {
     padding: 3rem;
-    font-size: 2vw;
+    font-size: 30px;
   }
   .btn_2 {
-    height: 50px;
-    width: 180px;
-    border-radius: 30px;
+    width: 140px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+    font-size: 18px;
     background-color: white;
-    font-size: 20px;
     margin-left: 3rem;
     cursor: pointer;
-    
   }
   .login_style {
-    font-size: 50px;
-    margin-bottom: 40px;
+    font-size: 40px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 0;
   }
-
+  .infoContainer {
+    width: 80%;
+  }
   .btn_1 {
->>>>>>> 60fa815205cfda9029424ddf7f9add21bcfb9683
-    height: 50px;
-    width: 180px;
-    border-radius: 30px;
-    font-size: 20px;
+    width: 140px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+    font-size: 18px;
   }
 }
-<<<<<<< HEAD
-.btn_2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-@media only screen and ( min-width:770px){
-    .one{
-        display: flex;
-    }
-    .login_page{
-        width: 60vw;
-        height: 100%;
-        background-color: white;
-        padding: 0;
-    }
-    .go_signup{
-        width: 40vw;
-        height: 100vh;
-        background-color: rgb(94, 172, 170);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .intro{
-        display: flex;
-        flex-direction: column;
-        align-items: center;  
-    }
-    .intro_1{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        flex-direction: column;
-    }
-    .new_font{
-        font-size: 4vw;
-        color: white;
-    }
-    .sign_font{
-       padding: 3rem;
-       font-size: 3vw;
-       color: white;
-    }
-    .btn_2{
-        height: 50px;
-        width: 180px;
-        border-radius: 30px;
-        background-color: white;
-        font-size: 20px;
-    }
-    .login_style{
-        color: black;
-        font-size: 4vw;
-        margin-bottom: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 0;
-    }
-    .input{
-        height: 45px;
-        width: 390px;
-        border-radius: 15px;
-        border: 0;
-        padding-left: 15px;
-        font-size: 18px;
-        background-color:  rgb(222, 242, 241);
-    }
-    .btn_1{
-        height: 50px;
-        width: 180px;
-        border-radius: 30px;
-        font-size: 20px;
-        background-color: rgb(94, 172, 170);
-    }
-
-}
-=======
->>>>>>> 60fa815205cfda9029424ddf7f9add21bcfb9683
