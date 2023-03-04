@@ -45,8 +45,8 @@ export const Carousell = (props) => {
           <Carousel.Slide className={styles.slide}>3</Carousel.Slide>
           <Carousel.Slide className={styles.slide}>4</Carousel.Slide>
           <Carousel.Slide className={styles.slide}>5</Carousel.Slide>
-          <Carousel.Slide className={styles.slide}>5</Carousel.Slide>
-          <Carousel.Slide className={styles.slide}>5</Carousel.Slide>
+          <Carousel.Slide className={styles.slide}>6</Carousel.Slide>
+          <Carousel.Slide className={styles.slide}>7</Carousel.Slide>
         </Carousel>
       </div>
     </div>
