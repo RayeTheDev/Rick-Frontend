@@ -22,6 +22,7 @@
   display: flex;
   justify-content: center;
 }
+
 .btn_2 {
   width: 140px;
   border-radius: 30px;
@@ -53,6 +54,7 @@
   .one {
     display: flex;
   }
+
   .goto_href {
     display: none;
   }
@@ -66,9 +68,11 @@
     );
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     color: white;
+    gap: 30px;
+
+    /* padding: 50px; */
   }
   .signup_page {
     display: flex;
@@ -78,17 +82,27 @@
     flex-direction: column;
     background-color: white;
     height: 96.3vh;
+   gap: 5px
   }
+  .innerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+ }
   .usernameSection {
     display: flex;
     gap: 15px;
   }
   .sign_al {
     font-size: 40px;
+    font-weight: 800;
   }
   .sign_info {
     font-size: 30px;
-    padding: 3rem;
+    line-height: 50px;
+    font-weight: 550;
+    max-width: 500px;
   }
   .btn_1 {
     height: 40px;
@@ -112,6 +126,12 @@
     font-size: 18px;
     margin-bottom: 30px;
     background-color: rgb(222, 242, 241);
+  }
+  .group {
+    gap: 70px
+  }
+  .longInput {
+    width: 350px;
   }
   .btn_2 {
     height: 40px;
