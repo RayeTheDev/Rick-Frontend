@@ -33,47 +33,54 @@ export const Login = () => {
     <div className={styles.one}>
       <div className={styles.just}>
         <div className={styles.login_page}>
-          <div className={styles.intro_1}>
-            <p className={styles.login_style}>Login</p>
-            <div>
-              <TextInput
-                className={styles.input}
-                label="Your email"
-                placeholder="Your email"
-                icon={<IconAt size="0.8rem" />}
-              />
-            </div>
+          <div class="w3-animate-left">
+            <div className={styles.intro_1}>
+              <p className={styles.login_style}>Login</p>
+              <div>
+                <TextInput
+                  className={styles.input}
+                  label="Your email"
+                  placeholder="Your email"
+                  icon={<IconAt size="0.8rem" />}
+                />
+              </div>
 
-            <div className={styles.passContainer}>
-              <PasswordInput
-                className={styles.input}
-                label="Your password"
-                placeholder="Your password"
-                icon={<IconLock size="1rem" />}
-              />
-            </div>
-            <div className={styles.midContainer}>
-              <a className={styles.midText} href="#">
-                Forget password
-              </a>
-            </div>
+              <div className={styles.passContainer}>
+                <PasswordInput
+                  className={styles.input}
+                  label="Your password"
+                  placeholder="Your password"
+                  icon={<IconLock size="1rem" />}
+                />
+              </div>
+              <div className={styles.midContainer}>
+                <a className={styles.midText} href="#">
+                  Forget password
+                </a>
+              </div>
 
-            <button className={styles.btn_1}>Log in</button>
+              <button className={styles.btn_1}>Log in</button>
+            </div>
           </div>
         </div>
       </div>
-      <div className={styles.go_signup}>
-        <div className={styles.intro}>
-          <p className={styles.new_font}>New Here?</p>
-          <p className={styles.sign_font}>
-            Sign up and discover a great amount of new opportunities.
-          </p>
-          <Link
-            to="/Signup"
-            style={{ textDecoration: "none", color: "rgb(0, 51, 126)" }}
-          >
-            <div className={styles.btn_2}>sign up</div>
-          </Link>
+      <div className={styles.go_signup} >
+        <div class="w3-animate-left">
+          <div className={styles.intro}>
+            <p className={styles.new_font}>New Here?</p>
+            <div className={styles.infoContainer}>
+              <p className={styles.sign_font}>
+                Sign up and discover a great amount of new opportunities.
+              </p>
+            </div>
+
+            <Link
+              to="/Signup"
+              style={{ textDecoration: "none", color: "rgb(0, 51, 126)" }}
+            >
+              <div className={styles.btn_2}>Sign up</div>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
