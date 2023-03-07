@@ -1,4 +1,4 @@
-import { Signup, Login, Home, News, Comment} from "./component"
+import { Signup, Login, Home, News, Comment, Footer} from "./component"
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 function App(){
     return(
@@ -12,6 +12,7 @@ function App(){
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/comment" element={<Comment />} />
+                <Route path="/footer" element={<Footer />} />
               </Routes>
             </section>
           </div>

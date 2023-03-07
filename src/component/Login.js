@@ -32,16 +32,6 @@ export const Login = () => {
 
     <div className={styles.one}>
       <div className={styles.just}>
-<<<<<<< HEAD
-      <div className={styles.login_page}>
-        <div className={styles.intro_1}>
-            <p className={styles.login_style}>Login to Your Account</p>
-            <input placeholder="email" className={styles.input}></input>
-            <input placeholder="password" className={styles.input}></input>
-            <a href="#">forget password</a>
-            <button className={styles.btn_1}>sign in</button>
-            
-=======
         <div className={styles.login_page}>
           <div className={styles.intro_1}>
             <p className={styles.login_style}>Login</p>
@@ -70,7 +60,6 @@ export const Login = () => {
 
             <button className={styles.btn_1}>Log in</button>
           </div>
->>>>>>> 60fa815205cfda9029424ddf7f9add21bcfb9683
         </div>
       </div>
       <div className={styles.go_signup}>

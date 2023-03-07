@@ -1,3 +1,9 @@
+h1{
+    color:black
+}
+body{
+    font-family: "SF Display", sans-serif;
+}
 @media only screen and (min-width:1400px){
     .flex{
         display: flex;
@@ -9,14 +15,17 @@
     .width{
         width: 55vw;
     }
-    h1{
-       color: black;
-        padding: 0;
+    .title{
+        padding-top: 20px;
+        font-size: 3vh;
+        color: black;
+        font-family: 'SF Display', sans-serif;
     }
     .pic_news{
         width: 100%;
         height: fit-content;
         padding-top: 60px;
+        border: 0;
     }
     .publish{
         height: 50px;
@@ -41,6 +50,15 @@
     .nii{
         display: block;
         color: black;
+    }
+    .help{
+        margin-top: 50px;
+        
+    }
+    .hhr{
+        width: 80px;
+        height: 1px;
+        background-color: gray;
     }
     .width1{
         display: flex;
@@ -98,6 +116,13 @@
     .p{
         color:black;
     }
+    .new{
+        display: flex;
+    }
+    .padding{
+        display: flex;
+        gap:20px
+    }
 }
 @media only screen and (max-width:1400px){
     .flex{
@@ -110,14 +135,15 @@
     .width{
         width: 65vw;
     }
-    h1{
-        color: black;
-        padding: 0;
-    }
     .pic_news{
         width: 100%;
         height: fit-content;
         padding-top: 60px;
+    }
+    .title{
+        padding-top: 20px;
+        font-size: 3vh;
+        color: black;
     }
     .publish{
         height: 50px;
@@ -198,6 +224,11 @@
     .p{
         color:black;
     }
+    .padding{
+        display: flex;
+        gap:20;
+        padding-left: 0;
+    }
 }
 @media only screen and (max-width:1200px){
     .flex{
@@ -210,9 +241,10 @@
     .width{
         width: 70vw;
     }
-    h1{
+    .title{
+        padding-top: 20px;
+        font-size: 3vh;
         color: black;
-        padding: 0;
     }
     .pic_news{
         width: 100%;
@@ -293,6 +325,11 @@
     .p{
         color:black;
     }
+    .padding{
+        display: flex;
+        gap:20;
+        padding-left: 0;
+    }
 
 }
 @media only screen and (max-width:970px){
@@ -303,15 +340,16 @@
         flex-direction: column;
         padding-top: 100px;
     }
+    .title{
+        padding-top: 20px;
+        font-size: 3vh;
+        color: black;
+    }
     .p{
         color:black;
     }
     .width{
         width: 84vw;
-    }
-    h1{
-        color: black;
-        padding: 0;
     }
     .pic_news{
         width: 100%;
@@ -389,6 +427,11 @@
        margin-top: 20px;
        height: 37px;
     }
+    .padding{
+        display: flex;
+        gap:20;
+        padding-left: 0;
+    }
 }
 @media only screen and (max-width:770px){
     .flex{
@@ -398,15 +441,16 @@
         flex-direction: column;
         padding-top: 100px;
     }
+    .title{
+        padding-top: 20px;
+        font-size: 3vh;
+        color: black;
+    }
     .p{
         color: black;
     }
     .width{
         width: 100vw;
-    }
-    h1{
-        color: black;
-        padding: 0;
     }
     .pic_news{
         width: 100%;
@@ -485,6 +529,23 @@
     }
     h1{
         padding-left: 20px;
+    }
+    .help{
+        display: none;
+    }
+    .title{
+        padding-left: 20px;
+    }
+    .padding{
+        display: flex;
+        gap:20;
+        padding-left: 20px;
+    }
+    .mainsubject{
+        font-size: 6vw;
+    }
+    .padding{
+        display: block;
     }
    
 }
