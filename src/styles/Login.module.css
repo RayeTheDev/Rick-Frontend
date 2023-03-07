@@ -2,25 +2,29 @@
   display: none;
 }
 .login_style {
-  font-size: 20px;
+  font-size: 33px;
   font-family: "SF Display", sans-serif;
   color: rgb(0, 54, 115);
   font-weight: 800;
 }
 .just {
-  display: flex;
-  justify-content: center;
-}
-
-.login_page {
-  height: 90vh;
-  width: 86vw;
-  background-color: rgb(94, 172, 170);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 60px;
-  padding: 15px;
+  background: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+}
+
+.login_page {
+  width: 70%;
+  height: 40%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .midContainer {
   width: 100%;
@@ -46,7 +50,7 @@
   gap: 20px;
 }
 .input {
-  width: 460px;
+  width: 380px;
 }
 .btn_1 {
   padding-top: 7px;
@@ -84,6 +88,7 @@
     width: 70vw;
     height: 100%;
     background-color: white;
+    border-radius: 0;
     padding: 0;
   }
   .go_signup {
@@ -151,3 +156,64 @@
     font-size: 18px;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .new_font {
+    font-size: 33px;
+  }
+  .sign_font {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .new_font {
+    font-size: 28px;
+  }
+  .sign_font {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 580px) {
+
+  .input {
+    width: 330px;
+  }
+}
+@media screen and (max-width: 510px) {
+  .input {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login_page {
+    width: 75%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .input {
+    width: 280px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .login_page {
+    height: 60%;
+  }
+  .input {
+    width: 240px;
+  }
+  .btn_1 {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .login_page {
+    height: 80%;
+  }
+  .input {
+    width: 200px;
+  }
+  .btn_1 {
+    font-size: 16px;
+  }
+}
+

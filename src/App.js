@@ -1,5 +1,6 @@
 import { Signup, Login, Home, News, Comment} from "./component"
 import { Routes, BrowserRouter, Route } from "react-router-dom";
+import { Confirmation } from "./component/Confirmation";
 function App(){
     return(
        <div className="App">
@@ -12,6 +13,7 @@ function App(){
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/comment" element={<Comment />} />
+                <Route path="/confirmation" element={<Confirmation />} />
               </Routes>
             </section>
           </div>

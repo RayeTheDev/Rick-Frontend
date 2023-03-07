@@ -13,31 +13,43 @@ export const Signup = () => {
   return (
     <div className={styles.one}>
       <div className={styles.go_login}>
-        <div className={styles.innerContainer}>
-          <p className={styles.sign_al}>Already Signed up?</p>
-          <div style={{width: "58%", display: "flex",  justifyContent: "center"}}>
-            <p className={styles.sign_info}>
-            To keep connected with us please login with your personal info
-          </p>
-          
+        <div class="w3-animate-left">
+          <div className={styles.innerContainer}>
+            <p className={styles.sign_al}>Already Signed up?</p>
+            <div
+              style={{
+                width: "58%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <p className={styles.sign_info}>
+                To keep connected with us please login with your personal info
+              </p>
+            </div>
+            <Link to="/Login">
+              <Button className={styles.btn_1} radius="xl">
+                Login
+              </Button>
+            </Link>
           </div>
-          <Link to="/Login">
-            <Button className={styles.btn_1} radius="xl">
-              Login
-            </Button>
-          </Link>
         </div>
       </div>
+
       <div className={styles.just}>
+        <div class="w3-animate-left">
         <div className={styles.signup_page}>
+          
           <p className={styles.signup_ac}>Create Account</p>
           <div className={styles.usernameSection}>
             <TextInput
+              className={styles.nameInput}
               placeholder="Your first name"
               label="First name"
               withAsterisk
             />
             <TextInput
+              className={styles.nameInput}
               placeholder="Your last name"
               label="Last name"
               withAsterisk
@@ -77,10 +89,11 @@ export const Signup = () => {
           >
             Sign Up
           </Button>
-          <div className={styles.goto_href}>
-            <a href="l">go to login</a>
-          </div>
+          <Link href="l" className={styles.goto_href}>
+            <span>Already signed up?</span>
+          </Link>
         </div>
+      </div>
       </div>
     </div>
   );

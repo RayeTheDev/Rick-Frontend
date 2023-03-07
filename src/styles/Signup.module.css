@@ -1,41 +1,67 @@
 .go_login {
   display: none;
 }
+.one {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 6.4% 9.8%,
+    rgb(88, 242, 174) 0%,
+    rgb(0, 130, 240) 97.9%
+  );
+}
 .signup_ac {
   color: black;
   font-size: 6vw;
-  color: white;
   padding-bottom: 2vw;
 }
 .signup_page {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: rgb(94, 172, 170);
   width: 83vw;
-  border-radius: 60px;
-  height: 90vw;
-  padding: 15px;
+  height: 90%;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 10px -10px 10px black;
+  border-radius: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  gap: 10px;
 }
 .just {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
 }
-
+.goto_href {
+  color: gray;
+  text-decoration: none;
+}
+.group {
+  gap: 90px;
+}
+a {
+  text-decoration: none;
+}
 .btn_2 {
   width: 140px;
   border-radius: 30px;
   font-size: 20px;
-  background-color: rgb(222, 242, 241);
-
+  height: 40px;
   margin-top: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.usernameSection {
+  display: flex;
+  gap: 40px;
+}
 .input {
-  height: 5.3vh;
+  height: 100px;
   width: 70%;
   border-radius: 15px;
   border: 0;
@@ -49,14 +75,25 @@
   justify-content: center;
   align-items: center;
 }
+.longInput {
+  width: 380px;
+}
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 810px) {
   .one {
     display: flex;
+    background-color: white;
   }
 
   .goto_href {
     display: none;
+  }
+  .just {
+    width: 60vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center ;
   }
   .go_login {
     width: 40vw;
@@ -71,25 +108,22 @@
     flex-direction: column;
     color: white;
     gap: 30px;
-
-    /* padding: 50px; */
   }
   .signup_page {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60vw;
+    border-radius: 0%;
     flex-direction: column;
-    background-color: white;
-    height: 96.3vh;
-   gap: 5px
+    width: auto;
+    gap: 5px;
   }
   .innerContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
- }
+  }
   .usernameSection {
     display: flex;
     gap: 15px;
@@ -102,6 +136,7 @@
     font-size: 30px;
     line-height: 50px;
     font-weight: 550;
+    text-align: center;
     max-width: 500px;
   }
   .btn_1 {
@@ -128,7 +163,7 @@
     background-color: rgb(222, 242, 241);
   }
   .group {
-    gap: 70px
+    gap: 70px;
   }
   .longInput {
     width: 350px;
@@ -136,5 +171,72 @@
   .btn_2 {
     height: 40px;
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .go_login {
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+  .innerContainer {
+    gap: 54px
+  }
+  .sign_al {
+    font-size: 33px;
+  }
+  .sign_info {
+    font-size: 28.5px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .sign_al {
+    font-size: 30px;
+  }
+  .innerContainer {
+    gap: 57px
+  }
+  .sign_info {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .signup_page {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+  .nameInput {
+    width: 150px;
+  }
+  .longInput {
+    width: 340px;
+  }
+  .btn_2 {
+    height: 35px;
+  }
+  .group {
+    gap: 70px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .nameInput {
+    width: 130px;
+  }
+  .longInput {
+    width: 300px;
+  }
+  .group {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 410px) {
+  .nameInput {
+    width: 120px;
+  }
+  .longInput {
+    width: 280px;
+  }
+  .group {
+    gap: 30px;
   }
 }
