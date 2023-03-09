@@ -3,12 +3,14 @@ import background from "./assets/background.png";
 import heviinBoov from "./assets/heviinboov.jpeg";
 import { Carousell } from "./Carousel";
 import { Grid } from "./Grid";
+import { Article } from "./Article";
 
 export const Home = () => {
   return (
     <div className={styles.controller}>
       <div className={styles.light}>
         <img className={styles.background} src={background}></img>
+        <div className={styles.gradient}></div>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.content2Container}>
@@ -25,6 +27,7 @@ export const Home = () => {
         </div>
       </div>
       <Carousell />
+      <Article />
       <Grid />
     </div>
   );

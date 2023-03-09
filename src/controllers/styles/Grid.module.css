@@ -12,7 +12,7 @@
   justify-content: center;
   width: 100%;
   height: 700px;
-  margin-top: 20%;
+  margin-top: 500px;
 }
 .pin_container {
   position: absolute;
@@ -22,60 +22,41 @@
   grid-auto-rows: var(--row_increment);
   justify-content: center;
 }
-.card_extra_large {
-  padding: 0px;
+.card_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.card_extra_large { 
+  display: flex;
   margin: 10px 10px;
   border-radius: var(--card_border-radius);
   grid-row-end: span var(--card_extra_large);
-  background-color: pink;
-  background-image: url(https://unread.today/files/44/5a575ffa8c2ebc8ec1a02992c4e6a05b_square.jpg);
-  background-position: 100%;
-  background-size: cover;
-  border-radius: 15px;
 }
 .card_large1 {
   padding: 0px;
   margin: 10px 10px;
   border-radius: var(--card_border-radius);
   grid-row-end: span var(--card_large);
-  background-color: green;
-  background-position: 100%;
-  background-image: url(https://unread.today/files/007afc64-288a-4208-b9d7-3eda84011c1d/fb2e562f296111cbf6c70cc46cf7a783_square.jpeg);
-  background-size: cover;
-  border-radius: 15px;
 }
 .card_large2 {
   padding: 0px;
   margin: 10px 10px;
   border-radius: var(--card_border-radius);
   grid-row-end: span var(--card_large);
-  background-color: green;
-  background-position: 100%;
-  background-image: url(https://unread.today/files/007afc64-288a-4208-b9d7-3eda84011c1d/fb2e562f296111cbf6c70cc46cf7a783_square.jpeg);
-  background-size: cover;
-  border-radius: 15px;
 }
 .card_medium1 {
   padding: 0px;
   margin: 10px 10px;
   border-radius: var(--card_border-radius);
-  background-image: url(https://unread.today/files/969a1aed-77a4-45e9-b7b7-3ee2709aaf31/398683208b86e70e1ea1792f0b2d38e1_square.png);
-  background-position: 100%;
-  background-size: cover;
   grid-row-end: span var(--card_medium);
-  background-color: blue;
-  border-radius: 15px;
 }
 .card_medium2 {
   padding: 0px;
   margin: 10px 10px;
   border-radius: var(--card_border-radius);
-  background-image: url(https://unread.today/files/969a1aed-77a4-45e9-b7b7-3ee2709aaf31/398683208b86e70e1ea1792f0b2d38e1_square.png);
-  background-position: 100%;
-  background-size: cover;
   grid-row-end: span var(--card_medium);
-  background-color: blue;
-  border-radius: 15px;
 }
 .card_small {
   display: flex;
@@ -90,22 +71,12 @@
 .small_small1 {
   border-radius: 15px;
   width: 264px;
-  background-image: url(https://unread.today/files/3d642b1c-cb78-4ea8-9fbe-ef518fc6d379/dea1e871f34e0b55dc3888e3f195ec84_square.png);
-  background-position: 100%;
-  background-size: cover;
   height: 100%;
-  background-position: 80%;
-  background-color: purple;
 }
 .small_small2 {
   border-radius: 15px;
   width: 264px;
-  background-image: url(https://unread.today/files/3d642b1c-cb78-4ea8-9fbe-ef518fc6d379/dea1e871f34e0b55dc3888e3f195ec84_square.png);
-  background-position: 100%;
-  background-size: cover;
   height: 100%;
-  background-position: 80%;
-  background-color: purple;
 }
 @media only screen and (max-width: 1250px) {
   :root {
@@ -139,8 +110,6 @@
   padding-left: 30px;
   padding-right: 30px;
   width: 100%;
-  height: 100vh;
-  border: 1px solid black;
   background-color: black;
 }
 .card1 {
@@ -151,29 +120,23 @@
 }
 .card1_1 {
   display: flex;
-  width: 100vw;
+  width: 92vw;
+  height: 40vh;
 }
 .card_image1_1 {
   border-radius: 15px;
-  width: 92vw;
+  width: 100%;
   object-fit: cover;
 }
 .card2 {
   display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  margin-top: 3%;
   width: 92vw;
-  height: 40vh;
-  border: 1px solid white;
+  gap: 3%;
 }
 .card2_1 {
   display: flex;
-  width: 100vw;
-  border: 1px solid red;
-}
-.card2_1_con {
-  display: flex;
-  width: 100vw;
+  width: 44.5vw;
 }
 .card_image2_1 {
   width: 100%;
@@ -181,9 +144,55 @@
 }
 .card2_2 {
   display: flex;
-  width: 100vw;
+  width: 44.5vw;
 }
 .card_image2_2 {
+  width: 100%;
+  border-radius: 15px;
+}
+.card3 {
+  display: flex;
+  margin-top: 3%;
+  width: 92vw;
+  gap: 3%;
+}
+.card3_1 {
+  display: flex;
+  width: 44.5vw;
+}
+.card_image3_1 {
+  width: 100%;
+  border-radius: 15px;
+}
+.card3_2 {
+  display: flex;
+  width: 44.5vw;
+}
+.card_image3_2 {
+  width: 100%;
+  border-radius: 15px;
+}
+.card4 {
+  display: flex;
+  margin-top: 3%;
+  width: 92vw;
+  height: 40vh;
+  gap: 3%;
+}
+.card4_1 {
+  display: flex;
+  width: 44.5vw;
+}
+.card_image4_1 {
+  width: 100%;
+  border-radius: 15px;
+}
+.card4_2 {
+  display: flex;
+  width: 44.5vw;
+}
+.card_image4_2 {
+  width: 100%;
   border-radius: 15px;
 }
 
