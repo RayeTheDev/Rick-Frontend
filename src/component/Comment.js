@@ -28,8 +28,8 @@ export const Comment = () => {
             </div>
             <div className={styles.comment}>
               <div style={{ width: "70%" }}>
-                <p style={{ color: "blue" }}>special news</p>
-                <h2>
+                <p style={{ color: "#0078f6" }}>special news</p>
+                <h2 className={styles.h2}>
                   special news is that my classmates famous couple got married
                   in march
                 </h2>
@@ -60,8 +60,8 @@ export const Comment = () => {
             </div>
             <div className={styles.comment2}>
               <div style={{ width: "70%" }}>
-                <p style={{ color: "blue" }}>free style</p>
-                <h2>
+                <p style={{ color: "#0078f6" }}>free style</p>
+                <h2 className={styles.h2}>
                   you are nothing you are normal just like everyone else but you can make yourself special
                 </h2>
               </div>
@@ -93,8 +93,8 @@ export const Comment = () => {
             </div>
             <div className={styles.comment}>
               <div style={{ width: "70%" }}>
-                <p style={{ color: "blue" }}>special news</p>
-                <h2>
+                <p style={{ color: "#0078f6" }}>special news</p>
+                <h2 className={styles.h2}>
                   special news is that my classmates famous couple got married
                   in march
                 </h2>

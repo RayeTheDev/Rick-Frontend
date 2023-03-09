@@ -1,4 +1,4 @@
-import { Signup, Login, Home, News, Comment, Footer} from "./component"
+import { Signup, Login, Home, News, Comment} from "./component"
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { Confirmation } from "./component/Confirmation";
 function App(){
