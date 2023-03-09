@@ -1,12 +1,32 @@
 import styles from "../styles/Login.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TextInput } from "@mantine/core";
 import { IconAt } from "@tabler/icons-react";
 import { PasswordInput } from "@mantine/core";
 import { IconLock } from "@tabler/icons-react";
 import Logo from "../logo.ico";
+import { useState } from "react";
+import { client } from "./client/Instance";
 
 export const Login = () => {
+  const [emailInput, setEmailInput] = useState();
+  const [passwordInput, setPasswordInput] = useState();
+  const navigate = useNavigate();
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    client
+      .post("/login", { email: emailInput, password: passwordInput })
+      .then((res) => {
+        console.log(res.data);
+        localStorage.setItem('USER_TOKEN', res.data.accessToken );
+        navigate("/confirmation");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     // <div className={styles.one}>
     //   <div className={styles.just}>
@@ -41,6 +61,7 @@ export const Login = () => {
                   className={styles.input}
                   label="Your email"
                   placeholder="Your email"
+                  onChange={(e) => setEmailInput(e.target.value)}
                   icon={<IconAt size="0.8rem" />}
                 />
               </div>
@@ -49,6 +70,7 @@ export const Login = () => {
                 <PasswordInput
                   className={styles.input}
                   label="Your password"
+                  onChange={(e) => setPasswordInput(e.target.value)}
                   placeholder="Your password"
                   icon={<IconLock size="1rem" />}
                 />
@@ -59,12 +81,15 @@ export const Login = () => {
                 </a>
               </div>
 
-              <button className={styles.btn_1}>Log in</button>
+              <button className={styles.btn_1} onClick={onSubmit}>
+                Log in
+              </button>
+              <Link to="/signup">Sign up</Link>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.go_signup} >
+      <div className={styles.go_signup}>
         <div class="w3-animate-left">
           <div className={styles.intro}>
             <p className={styles.new_font}>New Here?</p>
@@ -80,6 +105,7 @@ export const Login = () => {
             >
               <div className={styles.btn_2}>Sign up</div>
             </Link>
+           
           </div>
         </div>
       </div>

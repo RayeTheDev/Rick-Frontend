@@ -1,5 +1,29 @@
+ * {
+  font-family: "SF Display", sans-serif;
+ }
+
 .go_login {
   display: none;
+}
+.loadingContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.loadingInnerSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px
+}
+.loadingText {
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+  
 }
 .one {
   height: 100vh;
@@ -78,7 +102,10 @@ a {
 .longInput {
   width: 380px;
 }
-
+.btn_1:active,
+.btn_2:active {
+  transform: scale(95%);
+}
 @media screen and (min-width: 810px) {
   .one {
     display: flex;
