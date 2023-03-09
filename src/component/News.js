@@ -2,45 +2,82 @@ import styles from "../styles/News.module.css";
 import { AiFillCodeSandboxCircle } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
-import { Footer} from "../component"
+import { Footer } from "../component";
 export const News = () => {
   return (
     <>
       <div className={styles.flex}>
         <div className={styles.width}>
-          <div style={{ display: "flex", gap: "20px" }}>
-           <div className={styles.new}>
-           <p style={{ color: "#0078f6" }}>7 honogiin medee</p>
-            <p style={{color:"black"}}>2 sariin 32 2023 *9min</p>
-           </div>
+          <div className={styles.padding} >
+            <p style={{ color: "#0078f6", fontSize: "13px",paddingRight:"20px" }}>
+              7 ХОНОГИЙН ТОЙМ
+            </p>
+            <p style={{ color: " #6d7378", fontSize: "13px" }}>
+              {" "}
+              2 САРЫН 26, 2023. 9 МИН
+            </p>
           </div>
-          <h1 style={{ paddingTop: "20px" }}>Neg jl opera uhaalag uruul</h1>
+          <div className={styles.title}>Нэг жил + Олеато + Ухаалаг уруул</div>
           <img
             src="https://sportshub.cbsistatic.com/i/2023/02/09/8184e079-1bf8-49f1-91ac-03c560d00d04/attack-on-titan-final-season-part-3-everything-we-know-release-date-episode-number-story-spoilers.jpg"
             className={styles.pic_news}
           ></img>
         </div>
         <div className={styles.width1}>
-          <div className={styles.publish}>
-            <img
-              src="https://m.media-amazon.com/images/M/MV5BMmQ3NzVmOWUtNTQ5Yi00MDczLWIxMDYtNGU5ZGU2YjI1NDY2XkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg"
-              className={styles.pub_pic}
-            ></img>
-            <div className={styles.nii} >
-              <p>niitelsen:</p>
-              <p>B.Barjargal</p>
+          <div style={{ display: "block" }}>
+            <div className={styles.publish}>
+              <img
+                src="https://m.media-amazon.com/images/M/MV5BMmQ3NzVmOWUtNTQ5Yi00MDczLWIxMDYtNGU5ZGU2YjI1NDY2XkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg"
+                className={styles.pub_pic}
+              ></img>
+              <div className={styles.nii}>
+                <p style={{ color: "#888888", fontSize: "12px" }}>Нийтэлсэн:</p>
+                <p style={{ fontSize: "15px" }}>B.Barjargal</p>
+              </div>
+            </div>
+            <div className={styles.help}>
+              <div className={styles.hhr}></div>
+              <div style={{ color: "#888888", fontSize: "12px" , paddingTop: "20px",}}>
+                Нийтлэлд оролцсон:
+              </div>
+              <spam style={{ fontSize: "15px" }}>Г.Оюунлхам</spam>
+              <div
+                style={{
+                  color: "#888888",
+                  fontSize: "12px",
+                  paddingTop: "20px",
+                }}
+              >
+                Гэрэл зургийг:
+              </div>
+              <spam style={{ fontSize: "15px" }}>Б.Анарбаяр</spam>
             </div>
           </div>
+
           <div className={styles.news}>
-            <p>handalt/setgegdel:</p>
-            <div style={{ gap: "20px", paddingTop: "10px" }}>
-              <AiFillEye />
-              1866
+            <p
+              style={{ color: "#888888", paddingTop: "6px", fontSize: "13px" }}
+            >
+              Хандалт / Сэтгэгдэл:
+            </p>
+            <div style={{ paddingTop: "10px", display: "flex" }}>
+              <div style={{ marginRight: "20px" }}>
+                {" "}
+                <AiFillEye />
+                1866
+              </div>
               <FaComment />9
             </div>
             <div className={styles.main}>
-              <h1 style={{ paddingTop: "50px", paddingBottom: "30px" }}>
-                Main subjects
+              <h1
+                style={{
+                  paddingTop: "50px",
+                  paddingBottom: "30px",
+                  paddingLeft: "0",
+                }}
+                className={styles.mainsubject}
+              >
+                1 ГОЛ СЭДЭВ
               </h1>
               <p className={styles.p}>
                 ОХУ Украин руу халдан довтолсноос хойш яг нэг жил өнгөрчээ.
@@ -157,8 +194,8 @@ export const News = () => {
           <button className={styles.btn}>comment</button>
         </div>
       </div>
-      <Footer/>
-
+      <Footer />
     </>
   );
 };
+// style={{ display: "flex", gap: "20px" }}

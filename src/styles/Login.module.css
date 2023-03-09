@@ -112,12 +112,13 @@
     height: 100%;
     flex-direction: column;
   }
-  p {
+  .p {
     color: white;
   }
   .new_font {
     font-size: 40px;
     padding-left: 3rem;
+    color: white;
   }
   .sign_font {
     padding: 3rem;
