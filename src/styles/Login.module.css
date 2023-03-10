@@ -1,3 +1,7 @@
+* {
+  font-family: "SF Display", sans-serif;
+}
+
 .go_signup {
   display: none;
 }
@@ -17,14 +21,22 @@
 
 .login_page {
   width: 70%;
-  height: 40%;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
   border-radius: 20px;
   padding-left: 30px;
   padding-right: 30px;
+}
+.signText {
+  color: black;
+  font-size: 14px;
+}
+hr {
+  width: 100%;
 }
 .midContainer {
   width: 100%;
@@ -47,10 +59,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 .input {
   width: 380px;
+}
+.signupAdd {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 .btn_1 {
   padding-top: 7px;
@@ -64,14 +83,32 @@
   cursor: pointer;
   transition: 100ms;
 }
+.btn_3:active,
 .btn_1:active,
 .btn_2:active {
   transform: scale(95%);
+}
+.btn_3 {
+  width: 140px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: black;
+  border-radius: 20px;
+  font-size: 18px;
+  border: 1px solid gray;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 .btn_2 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.btn_3:hover {
+  background-color: rgba(226, 225, 225, 0.652);
 }
 .btn_1:hover {
   background-color: rgb(4, 80, 196);
@@ -82,8 +119,9 @@
 @media screen and (min-width: 770px) {
   .one {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
+
   .login_page {
     width: 70vw;
     height: 100%;
@@ -123,6 +161,7 @@
   .sign_font {
     padding: 3rem;
     font-size: 30px;
+    color: white;
   }
   .btn_2 {
     width: 140px;
@@ -175,7 +214,6 @@
   }
 }
 @media screen and (max-width: 580px) {
-
   .input {
     width: 330px;
   }
@@ -208,7 +246,7 @@
 }
 @media screen and (max-width: 330px) {
   .login_page {
-    height: 80%;
+    height: 95%;
   }
   .input {
     width: 200px;
@@ -217,4 +255,3 @@
     font-size: 16px;
   }
 }
-

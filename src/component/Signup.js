@@ -24,7 +24,7 @@ export const Signup = () => {
   const [loading, setLoading] = useState(false);
   const [res, setRes] = useState();
   const navigate = useNavigate();
-console.log(loading)
+  console.log(loading)
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -40,10 +40,10 @@ console.log(loading)
         setRes(res.data)
         setLoading(true)
         setTimeout(() => {
-            setLoading(false)
-            navigate("/login");
+          setLoading(false)
+          navigate("/login");
         }, 3000);
-       
+
       })
       .catch((err) => {
         console.log(err);
@@ -52,118 +52,118 @@ console.log(loading)
 
   return (
     <>
-    {loading ? 
-    <div className={styles.loadingContainer}>
-      <div className={styles.loadingInnerSection}>
-        <BounceLoader color="#36d7b7" />
-      <p className={styles.loadingText}>{res}</p>
-      </div>
-      
-    </div>  
-    :
-    <div className={styles.one}>
-      <div className={styles.go_login}>
-        <div class="w3-animate-left">
-          <div className={styles.innerContainer}>
-            <p className={styles.sign_al}>Already Signed up?</p>
-            <div
-              style={{
-                width: "58%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <p className={styles.sign_info}>
-                To keep connected with us please login with your personal info
-              </p>
+      {loading ?
+        <div className={styles.loadingContainer}>
+          <div className={styles.loadingInnerSection}>
+            <BounceLoader color="#36d7b7" />
+            <p className={styles.loadingText}>{res}</p>
+          </div>
+
+        </div>
+        :
+        <div className={styles.one}>
+          <div className={styles.go_login}>
+            <div class="w3-animate-left">
+              <div className={styles.innerContainer}>
+                <p className={styles.sign_al}>Already Signed up?</p>
+                <div
+                  style={{
+                    width: "58%",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <p className={styles.sign_info}>
+                    To keep connected with us please login with your personal info
+                  </p>
+                </div>
+                <Link to="/Login">
+                  <Button className={styles.btn_1} radius="xl">
+                    Login
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <Link to="/Login">
-              <Button className={styles.btn_1} radius="xl">
-                Login
-              </Button>
-            </Link>
+          </div>
+
+          <div className={styles.just}>
+            <div class="w3-animate-left">
+              <div className={styles.signup_page}>
+                <p className={styles.signup_ac}>Create Account</p>
+                <div className={styles.usernameSection}>
+                  <TextInput
+                    className={styles.nameInput}
+                    placeholder="Your first name"
+                    onChange={(e) => setFirstname(e.target.value)}
+                    label="First name"
+                    withAsterisk
+                  />
+                  <TextInput
+                    className={styles.nameInput}
+                    placeholder="Your last name"
+                    onChange={(e) => setLastname(e.target.value)}
+                    label="Last name"
+                    withAsterisk
+                  />
+                </div>
+
+                <TextInput
+                  className={styles.longInput}
+                  label="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email"
+                  icon={<IconAt size="0.8rem" />}
+                />
+                <PasswordInput
+                  label="Password"
+                  placeholder="Your password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  toggleTabIndex={0}
+                  className={styles.longInput}
+                />
+                <FileInput
+                  className={styles.longInput}
+                  label="Upload avatar"
+                  placeholder="Upload files"
+                  multiple
+                />
+                <Radio.Group name="favoriteFramework" label="Gender:" withAsterisk>
+                  <Group mt="sm" className={styles.group}>
+                    <Radio
+                      value="react"
+                      label="Male"
+                      onClick={() => setGender("male")}
+                    />
+                    <Radio
+                      value="svelte"
+                      label="Female"
+                      onClick={() => setGender("female")}
+                    />
+                    <Radio
+                      value="ng"
+                      label="Other"
+                      onClick={() => setGender("other")}
+                    />
+                  </Group>
+                </Radio.Group>
+
+                <Button
+                  className={styles.btn_2}
+                  variant="gradient"
+                  onClick={onSubmit}
+                  gradient={{ from: "teal", to: "blue", deg: 60 }}
+                >
+                  Sign Up
+                </Button>
+                <Link to="/login" className={styles.goto_href}>
+                  <span>Already signed up?</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className={styles.just}>
-        <div class="w3-animate-left">
-          <div className={styles.signup_page}>
-            <p className={styles.signup_ac}>Create Account</p>
-            <div className={styles.usernameSection}>
-              <TextInput
-                className={styles.nameInput}
-                placeholder="Your first name"
-                onChange={(e) => setFirstname(e.target.value)}
-                label="First name"
-                withAsterisk
-              />
-              <TextInput
-                className={styles.nameInput}
-                placeholder="Your last name"
-                onChange={(e) => setLastname(e.target.value)}
-                label="Last name"
-                withAsterisk
-              />
-            </div>
-
-            <TextInput
-              className={styles.longInput}
-              label="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email"
-              icon={<IconAt size="0.8rem" />}
-            />
-            <PasswordInput
-              label="Password"
-              placeholder="Your password"
-              onChange={(e) => setPassword(e.target.value)}
-              toggleTabIndex={0}
-              className={styles.longInput}
-            />
-            <FileInput
-              className={styles.longInput}
-              label="Upload avatar"
-              placeholder="Upload files"
-              multiple
-            />
-            <Radio.Group name="favoriteFramework" label="Gender:" withAsterisk>
-              <Group mt="sm" className={styles.group}>
-                <Radio
-                  value="react"
-                  label="Male"
-                  onClick={() => setGender("male")}
-                />
-                <Radio
-                  value="svelte"
-                  label="Female"
-                  onClick={() => setGender("female")}
-                />
-                <Radio
-                  value="ng"
-                  label="Other"
-                  onClick={() => setGender("other")}
-                />
-              </Group>
-            </Radio.Group>
-
-            <Button
-              className={styles.btn_2}
-              variant="gradient"
-              onClick={onSubmit}
-              gradient={{ from: "teal", to: "blue", deg: 60 }}
-            >
-              Sign Up
-            </Button>
-            <Link href="l" className={styles.goto_href}>
-              <span>Already signed up?</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  }
+      }
     </>
-    
+
   );
 };

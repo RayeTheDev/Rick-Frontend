@@ -1,17 +1,31 @@
 import styles from "../styles/Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import { TextInput } from "@mantine/core";
+import { Button, TextInput } from "@mantine/core";
 import { IconAt } from "@tabler/icons-react";
 import { PasswordInput } from "@mantine/core";
 import { IconLock } from "@tabler/icons-react";
 import Logo from "../logo.ico";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useWindowSize } from 'usehooks-ts'
 import { client } from "./client/Instance";
 
 export const Login = () => {
   const [emailInput, setEmailInput] = useState();
+  const [lowSize, setLowSize] = useState(false)
   const [passwordInput, setPasswordInput] = useState();
   const navigate = useNavigate();
+
+  const { width, height } = useWindowSize()
+  useEffect(() => {
+    if (width <= 770) {
+      setLowSize(true)
+    } else {
+      setLowSize(false)
+    }
+  }, [width])
+
+
+  console.log(width)
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -19,7 +33,7 @@ export const Login = () => {
       .post("/login", { email: emailInput, password: passwordInput })
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem('USER_TOKEN', res.data.accessToken );
+        localStorage.setItem('USER_TOKEN', res.data.accessToken);
         navigate("/confirmation");
       })
       .catch((err) => {
@@ -84,7 +98,14 @@ export const Login = () => {
               <button className={styles.btn_1} onClick={onSubmit}>
                 Log in
               </button>
-              <Link to="/signup">Sign up</Link>
+
+              {lowSize &&
+                <div className={styles.signupAdd}>
+                  <hr></hr>
+                  <Link to="/signup" className={styles.signText}>Haven't created account yet?</Link>
+                  <button className={styles.btn_3}>Sign Up</button>
+                </div>
+              }
             </div>
           </div>
         </div>
@@ -103,9 +124,9 @@ export const Login = () => {
               to="/Signup"
               style={{ textDecoration: "none", color: "rgb(0, 51, 126)" }}
             >
-              <div className={styles.btn_2}>Sign up</div>
+              <button className={styles.btn_2}>Sign up</button>
             </Link>
-           
+
           </div>
         </div>
       </div>
