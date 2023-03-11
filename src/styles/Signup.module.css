@@ -1,6 +1,6 @@
- * {
+* {
   font-family: "SF Display", sans-serif;
- }
+}
 
 .go_login {
   display: none;
@@ -11,19 +11,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .loadingInnerSection {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 10px
+  gap: 10px;
 }
 .loadingText {
   font-size: 25px;
   color: black;
   font-weight: bold;
-  
 }
 .one {
   height: 100vh;
@@ -120,7 +118,7 @@ a {
     height: 100vh;
     background-color: white;
     display: flex;
-    justify-content: center ;
+    justify-content: center;
   }
   .go_login {
     width: 40vw;
@@ -151,9 +149,12 @@ a {
     align-items: center;
     gap: 15px;
   }
+  .nameInput {
+    width: 170px;
+  }
   .usernameSection {
     display: flex;
-    gap: 15px;
+    gap: 10px;
   }
   .sign_al {
     font-size: 40px;
@@ -204,10 +205,9 @@ a {
   .go_login {
     padding-left: 20px;
     padding-right: 20px;
-
   }
   .innerContainer {
-    gap: 54px
+    gap: 54px;
   }
   .sign_al {
     font-size: 33px;
@@ -221,7 +221,7 @@ a {
     font-size: 30px;
   }
   .innerContainer {
-    gap: 57px
+    gap: 57px;
   }
   .sign_info {
     font-size: 25px;

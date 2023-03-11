@@ -15,7 +15,7 @@ export const Confirmation = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(localStorage.getItem("USER_TOKEN"));
+    console.log(localStorage.getItem("CONFIRMATION_TOKEN"));
 
     axios
       .post(
@@ -23,7 +23,7 @@ export const Confirmation = () => {
         { token: code.current.value },
         {
           headers: {
-            Authorization: localStorage.getItem("USER_TOKEN"),
+            Authorization: localStorage.getItem("CONFIRMATION_TOKEN"),
           },
         }
       )
