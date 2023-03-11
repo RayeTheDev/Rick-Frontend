@@ -4,6 +4,29 @@ h1{
 body{
     font-family: "SF Display", sans-serif;
 }
+textarea:focus, input:focus{
+    outline: none;
+    border: none;
+    border-style: none; 
+    overflow: auto;
+}
+textarea{
+    border: none;
+    width: 100px;
+}
+textarea:focus, button:focus{
+    outline: none;
+   
+}
+h4{
+    font-family: 'SF Display', sans-serif;
+}
+.limit{
+    width: 20%;
+    height: fit-content;
+    font-size: 10px;
+    margin-top: 30px;
+}
 @media only screen and (min-width:1400px){
     .flex{
         display: flex;
@@ -75,7 +98,7 @@ body{
         padding-bottom: 20px;
     }
     .com{
-        height: 30vh;
+        height: fit-content;
         width: 100vw;
         background-color: #f6f6f6;
         display: flex;
@@ -96,7 +119,7 @@ body{
         border: 0;
         height: 45%;
         width: 100%;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid rgb(211, 211, 211);
         padding-bottom: 5px;
     }
     .input1{
@@ -107,11 +130,14 @@ body{
         padding-bottom: 20px;
     }
     .btn{
-        width: 22%;
+        width: 20%;
        padding-top: 5px;
        padding-bottom: 5px;
        margin-top: 20px;
        height: 37px;
+       border: 1px solid rgb(219, 219, 219);
+       background-color: #fafafa;
+       font-size: 14px;
     }
     .p{
         color:black;
@@ -122,6 +148,33 @@ body{
     .padding{
         display: flex;
         gap:20px
+    }
+    .setgegdel{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .block{
+        height: fit-content;
+        max-width: 450px;
+        width: fit-content;
+        border: 1px solid #e6e6e6;
+        border-radius: 1.8rem 0 1.8rem 1.8rem;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .pro{
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+    }
+    .int{
+        display: flex;
+        gap: 10px;
+    }
+    .sav{
+        display: block;
+        font-size: 13px;
     }
 }
 @media only screen and (max-width:1400px){
@@ -183,7 +236,7 @@ body{
         padding-bottom: 20px;
     }
     .com{
-        height: 30vh;
+        height: fit-content;
         width: 100vw;
         background-color: #f6f6f6;
         display: flex;
@@ -284,7 +337,7 @@ body{
         padding-bottom: 20px;
     }
     .com{
-        height: 30vh;
+        height: fit-content;
         width: 100vw;
         background-color: #f6f6f6;
         display: flex;
@@ -389,7 +442,7 @@ body{
         padding-bottom: 20px;
     }
     .com{
-        height: 30vh;
+        height: fit-content;
         width: 100vw;
         background-color: #f6f6f6;
         display: flex;
@@ -486,7 +539,7 @@ body{
         padding-bottom: 20px;
     }
     .com{
-        height: 30vh;
+        height: fit-content;
         width: 100vw;
         background-color: #f6f6f6;
         display: flex;

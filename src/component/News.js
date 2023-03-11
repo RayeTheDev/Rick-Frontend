@@ -3,13 +3,42 @@ import { AiFillCodeSandboxCircle } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
 import { Footer } from "../component";
+import { useEffect, useState } from "react";
 export const News = () => {
+  const [limit, setLimit] = useState([]);
+  const [name, setName] = useState([]);
+  const [space, setSpace] = useState(0);
+  const [warn, setWarn] = useState(false);
+  const [comment, setComment] = useState([]);
+
+  const Btn = () => {
+    var my_string = limit;
+    var spaceCount = limit.split(" ").length - 1;
+    setSpace(my_string.length - spaceCount);
+
+    if (space < 100) {
+      console.log("less than 100");
+      setWarn(false);
+    } else {
+      console.log("100 gass ih");
+      setWarn(true);
+    }
+    const newComment = { limit: limit, name: name };
+    setComment([...comment, newComment]);
+  };
+
   return (
     <>
       <div className={styles.flex}>
         <div className={styles.width}>
-          <div className={styles.padding} >
-            <p style={{ color: "#0078f6", fontSize: "13px",paddingRight:"20px" }}>
+          <div className={styles.padding}>
+            <p
+              style={{
+                color: "#0078f6",
+                fontSize: "13px",
+                paddingRight: "20px",
+              }}
+            >
               7 ХОНОГИЙН ТОЙМ
             </p>
             <p style={{ color: " #6d7378", fontSize: "13px" }}>
@@ -37,7 +66,13 @@ export const News = () => {
             </div>
             <div className={styles.help}>
               <div className={styles.hhr}></div>
-              <div style={{ color: "#888888", fontSize: "12px" , paddingTop: "20px",}}>
+              <div
+                style={{
+                  color: "#888888",
+                  fontSize: "12px",
+                  paddingTop: "20px",
+                }}
+              >
                 Нийтлэлд оролцсон:
               </div>
               <spam style={{ fontSize: "15px" }}>Г.Оюунлхам</spam>
@@ -186,16 +221,77 @@ export const News = () => {
           </div>
         </div>
         <div className={styles.com}>
-          <h2>setgegdel bichih</h2>
-          <div className={styles.con}>
-            <input className={styles.input} placeholder="your name"></input>
-            <input className={styles.input1} placeholder="your comment"></input>
+          <div style={{ display: "flex", marginBottom: "20px" }}>
+            <img
+              src="https://unread.today/img/comment.png"
+              style={{
+                height: "26px",
+                marginTop: "10px",
+                marginRight: "7px",
+                fontFamily: "'SF Display', sans-serif",
+              }}
+            ></img>
+            <h4>Сэтгэгдэл бичих</h4>
           </div>
-          <button className={styles.btn}>comment</button>
+          <div className={styles.con}>
+            <input
+              className={styles.input}
+              placeholder="таны нэр"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <textarea
+              id="w3review"
+              name="w3review"
+              rows="6"
+              cols="30"
+              placeholder="сэтгэгдэл"
+              value={limit}
+              onChange={(e) => setLimit(e.target.value)}
+            ></textarea>
+          </div>
+          <button
+            className={styles.btn}
+            onClick={Btn}
+            style={{ backgroundColor: warn ? "#0078f6" : "white" }}
+          >
+            Сэтгэгдэл бичих
+          </button>
+          <div className={styles.limit}>
+            <div style={{ display: "flex" }}>
+              <span style={{ color: "#0078f6" }}>Тэмдэгт:{space}.</span>
+              <span>
+                Та 100-с доошгүй тэмдэгт ашиглан санал сэтгэгдлээ бүтээлчээр
+                үлдээгээрэй. Хамтдаа сэтгэгдэл бичих соёлыг Монголд бий
+                болгоцгооё.
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className={styles.setgegdel}>
+          {comment.map((give) => {
+            console.log(give);
+            return (
+              <div>
+                <div className={styles.int}>
+                  <img
+                    src="https://img.freepik.com/premium-photo/rain-water-drop-falling-city-street-floor-heavy-rain-day_1962-2005.jpg?w=2000"
+                    className={styles.pro}
+                  ></img>
+                  <div className={styles.sav}>
+                    <p>{give.name}</p>
+                    <p style={{color:" #0078f6"}}>1 минутын өмнө</p>
+                  </div>
+                </div>
+                <div className={styles.block}>
+                  <div className={styles.one}>{give.limit}</div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       <Footer />
     </>
   );
 };
-// style={{ display: "flex", gap: "20px" }}

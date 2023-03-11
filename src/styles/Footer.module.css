@@ -5,6 +5,13 @@
         background-color: black;
         display: block;
     }
+    .google{
+        width: 155px;
+    }
+    .boslogo{
+        display: flex;
+        justify-content: space-between;
+    }
     .pos{
         width: 65%;
         display: flex;
@@ -22,8 +29,22 @@
        border-radius: 1.3rem;
        padding: 20px;
        color: white;
+       overflow: hidden;
        margin-bottom: 30px;
        background-image: url(https://unread.today/img/btn-black.png);
+    }
+    .card:hover{
+        width: 350px;
+        height: 100px;
+        background-color: rgb(43, 48, 53);
+        border-radius: 1.3rem;
+        padding: 20px;
+        color: white;
+        margin-bottom: 30px;
+        background-image: url(https://unread.today/img/btn-black.png);
+        transition: all 1s ease-in-out;
+       
+
     }
     .mini{
         display: flex;
@@ -88,6 +109,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    .google{
+        width: 150px;
+    }
+    .boslogo{
+        display: flex;
+        justify-content: space-between;
     }
     .image{
         height: 18px;
@@ -163,6 +191,13 @@
         height: 65vh;
         background-color: black;
         display: block;
+    }
+    .google{
+        width: 145px;
+    }
+    .boslogo{
+        display: flex;
+        justify-content: space-between;
     }
     .pos{
         width: 95%;
@@ -255,6 +290,13 @@
         height: 18px;
         margin-bottom: 30px
     }
+    .google{
+        width: 140px;
+    }
+    .boslogo{
+        display: flex;
+        justify-content: space-between;
+    }
     .card{
        width: 320px;
        height: 100px;
@@ -325,6 +367,15 @@
         height: 65vh;
         background-color: black;
         display: block;
+    }
+    .google{
+        width: 160px;
+        margin-bottom: 20px;
+    }
+    .boslogo{
+        display: flex;
+        flex-direction: column;
+       
     }
     .pos{
         width: 95%;
@@ -405,6 +456,13 @@
         height: 65vh;
         background-color: black;
         display: block;
+    }
+    .google{
+        width: 145px;
+    }
+    .boslogo{
+        display: flex;
+       flex-direction: row;
     }
     .pos{
         width: 95%;
@@ -490,6 +548,14 @@
         height: 70vh;
         background-color: black;
         display: block;
+    }
+    .google{
+        width: 40%;
+    }
+    .boslogo{
+        display: flex;
+        flex-direction: none;
+        width: 90%;
     }
     .pos{
         width: 95%;
@@ -586,6 +652,14 @@
         padding-top: 50px;
         padding-bottom: 50px;
     }
+    .google{
+        width: 40%;
+        padding-bottom: 30px;
+    }
+    .boslogo{
+        display: flex;
+        flex-direction: none;
+    }
     .pos{
         width: 95%;
         display: block;
@@ -615,6 +689,7 @@
         font-size: 80%;
         justify-content: space-evenly;
         width: 82vw;
+        padding-top: 35px;
     }
     .threepart{
         display: block;
