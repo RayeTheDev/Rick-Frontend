@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   position: absolute;
+  top: 70vh;
   height: 500px;
   width: 100%;
-  top: 70%;
 }
 .div {
   display: flex;
