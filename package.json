@@ -17,11 +17,7 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
-    "react-spinners": "^0.13.8",
-=======
     "tabler-icons-react": "^1.56.0",
->>>>>>> d6cdb9451427c7f0e4c5e2633aa88a3821a84ef7
     "web-vitals": "^2.1.4"
   },
   "scripts": {
