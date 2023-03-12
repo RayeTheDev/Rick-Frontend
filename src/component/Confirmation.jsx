@@ -30,8 +30,8 @@ export const Confirmation = () => {
       .then((res) => {
         console.log(res.data);
         if (res.data.message === "jwt expired") {
-          setError('Code has expired')
-          return 
+          setError("Code has expired");
+          return;
         }
         navigate("/");
       })
@@ -58,8 +58,7 @@ export const Confirmation = () => {
             {/* <img className={styles.logo} src={logo}></img> */}
             <img
               className={styles.logo}
-              src="https://unread.today/img/unread_white.png"
-            ></img>
+              src="https://unread.today/img/unread_white.png"></img>
           </div>
 
           <div className={styles.confirm_section}>
@@ -77,7 +76,6 @@ export const Confirmation = () => {
               ) : (
                 <TextInput
                   className={styles.input}
-                  
                   type="number"
                   inputWrapperOrder={["label", "error", "input", "description"]}
                   ref={code}
@@ -88,8 +86,7 @@ export const Confirmation = () => {
               <Button
                 className={styles.button}
                 color="gray"
-                onClick={() => navigate("/login")}
-              >
+                onClick={() => navigate("/login")}>
                 Go back
               </Button>
               <Button className={styles.button} onClick={onSubmit}>

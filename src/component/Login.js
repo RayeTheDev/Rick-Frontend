@@ -28,7 +28,7 @@ export const Login = () => {
     }
   }, [width]);
 
-  console.log(width);
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -153,15 +153,15 @@ export const Login = () => {
                     Log in
                   </button>
 
-                  {/* {lowSize && */}
-                  <div className={styles.signupAdd}>
-                    <hr></hr>
-                    <Link to="/signup" className={styles.signText}>
-                      Haven't created account yet?
-                    </Link>
-                    <button className={styles.btn_3}>Sign Up</button>
-                  </div>
-                  {/* } */}
+                  {lowSize &&
+                    <div className={styles.signupAdd}>
+                      <hr></hr>
+                      <Link to="/signup" className={styles.signText}>
+                        Haven't created account yet?
+                      </Link>
+                      <button className={styles.btn_3}>Sign Up</button>
+                    </div>
+                  }
                 </div>
               </div>
             </div>

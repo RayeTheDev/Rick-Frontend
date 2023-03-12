@@ -12,59 +12,59 @@ export const Footer = () => {
           <div className={styles.pos}>
             <div className={styles.deesh}>
               <div className={styles.zuu}>
-              <img
-                src="https://cdn.discordapp.com/attachments/946351659674640447/1082593910548856852/UnreadLogo.png"
-                className={styles.image}
-              ></img>
-              <div className={styles.card}>
-                <p style={{ color: "gray", fontSize: "13px" }}>
-                  {" "}
-                  Хамтран ажиллах хүсэлт илгээх
-                </p>
-                <p className={styles.rep}>Контент нийтлүүлэх</p>
-              </div>
-              <div className={styles.card}>
-                <p style={{ color: "gray", fontSize: "13px" }}>
-                  {" "}
-                  Хамтран ажиллах хүсэлт илгээх
-                </p>
-                <p className={styles.rep}>Контент нийтлүүлэх</p>
+                <img
+                  src="https://cdn.discordapp.com/attachments/946351659674640447/1082593910548856852/UnreadLogo.png"
+                  className={styles.image}
+                ></img>
+                <div className={styles.card}>
+                  <p style={{ color: "gray", fontSize: "13px" }}>
+                    {" "}
+                    Хамтран ажиллах хүсэлт илгээх
+                  </p>
+                  <p className={styles.rep}>Контент нийтлүүлэх</p>
+                </div>
+                <div className={styles.card}>
+                  <p style={{ color: "gray", fontSize: "13px" }}>
+                    {" "}
+                    Хамтран ажиллах хүсэлт илгээх
+                  </p>
+                  <p className={styles.rep}>Контент нийтлүүлэх</p>
+                </div>
               </div>
             </div>
-              </div>
             <div className={styles.lai3}>
               <div className={styles.mini}>
-                <p>*Редакцийн бодлого</p>
-                <p>*Влок</p>
-                <p className={styles.ajil}>*Ажлийн байр</p>
-                <p>*Холбогдох</p>
+                <p>Редакцийн бодлого</p>
+                <p>Влок</p>
+                <p className={styles.ajil}>Ажлийн байр</p>
+                <p>Холбогдох</p>
               </div>
               <div className={styles.threepart}>
                 <div className={styles.arhi}>
-                <div className={styles.part1}>
-                  <h3>Булангууд</h3>
-                  <p>Онцлох бизнес</p>
-                  <p>Techworm</p>
-                  <p>Би хэрхэн ажилладаг вэ?</p>
-                  <p>Мэдүүштэй</p>
-                  <p>Чөлөөт</p>
-                  <p>Номын тухай</p>
-                  <p>7 хоногийн тойм</p>
-                  <p>Өртөөлөгчид</p>
-                  <p>Аравт</p>
-                  <p>Тогтвортой хөгжил</p>
-                </div>
-                <div className={styles.part2}>
-                  <p>Тайлбарлах нь</p>
-                  <p>А-Я</p>
-                  <p>10 ертөнц, 10 өнцөг</p>
-                  <p>Би хүүхдээ ингэж өсгөдөг</p>
-                  <p>Танилц, миний амьтан</p>
-                  <p>Таатай оффис</p>
-                  <p>Зочин нийтлэлчийн булан</p>
-                  <p>8 минутын улс төр</p>
-                  <p>Study Hacks</p>
-                </div>
+                  <div className={styles.part1}>
+                    <h3>Булангууд</h3>
+                    <p className={styles.sub_texts}>Онцлох бизнес</p>
+                    <p className={styles.sub_texts}>Techworm</p>
+                    <p className={styles.sub_texts}>Би хэрхэн ажилладаг вэ?</p>
+                    <p className={styles.sub_texts}>Мэдүүштэй</p>
+                    <p className={styles.sub_texts}>Чөлөөт</p>
+                    <p className={styles.sub_texts}>Номын тухай</p>
+                    <p className={styles.sub_texts}>7 хоногийн тойм</p>
+                    <p className={styles.sub_texts}>Өртөөлөгчид</p>
+                    <p className={styles.sub_texts}>Аравт</p>
+                    <p className={styles.sub_texts}>Тогтвортой хөгжил</p>
+                  </div>
+                  <div className={styles.part2}>
+                    <p className={styles.sub_texts}>Тайлбарлах нь</p>
+                    <p className={styles.sub_texts}>А-Я</p>
+                    <p className={styles.sub_texts}>10 ертөнц, 10 өнцөг</p>
+                    <p className={styles.sub_texts}>Би хүүхдээ ингэж өсгөдөг</p>
+                    <p className={styles.sub_texts}>Танилц, миний амьтан</p>
+                    <p className={styles.sub_texts}>Таатай оффис</p>
+                    <p className={styles.sub_texts}>Зочин нийтлэлчийн булан</p>
+                    <p className={styles.sub_texts}>8 минутын улс төр</p>
+                    <p className={styles.sub_texts}>Study Hacks</p>
+                  </div>
                 </div>
                 <div className={styles.part3}>
                   <h3>company</h3>
