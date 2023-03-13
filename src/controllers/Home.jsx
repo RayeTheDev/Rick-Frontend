@@ -4,10 +4,12 @@ import heviinBoov from "./assets/heviinboov.jpeg";
 import { Carousell } from "./Carousel";
 import { Grid } from "./Grid";
 import { Article } from "./Article";
+import { BlockHeader } from "./BlockHeader";
 
 export const Home = () => {
   return (
     <div className={styles.controller}>
+      <BlockHeader />
       <div className={styles.light}>
         <img className={styles.background} src={background}></img>
         <div className={styles.gradient}></div>
