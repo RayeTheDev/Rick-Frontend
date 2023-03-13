@@ -27,13 +27,13 @@ export const AppSidebarNav = ({ items }) => {
       <Component
         {...(rest.to &&
           !rest.items && {
-            component: NavLink,
-          })}
+          component: NavLink,
+        })}
         key={index}
         {...rest}
       >
         {navLink(name, icon, badge)}
-      </Component>
+      </Component >
     )
   }
   const navGroup = (item, index) => {
@@ -54,12 +54,12 @@ export const AppSidebarNav = ({ items }) => {
     )
   }
 
-  return (
-    <React.Fragment>
-      {items &&
-        items.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
-    </React.Fragment>
-  )
+  // return (
+  //   <React.Fragment>
+  //     {items &&
+  //       items.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
+  //   </React.Fragment>
+  // )
 }
 
 AppSidebarNav.propTypes = {
