@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { IconAt } from "@tabler/icons-react";
 import { useState } from "react";
-import { client } from "./client/Instance";
+import { client } from "../client/Instance";
 import BounceLoader from "react-spinners/BounceLoader";
 
 export const Signup = () => {

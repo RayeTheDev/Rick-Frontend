@@ -7,7 +7,7 @@ import { IconLock } from "@tabler/icons-react";
 import Logo from "../logo.ico";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "usehooks-ts";
-import { client } from "./client/Instance";
+import { client } from "../client/Instance";
 import BounceLoader from "react-spinners/BounceLoader";
 import jwt_decode from "jwt-decode";
 

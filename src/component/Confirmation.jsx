@@ -3,7 +3,7 @@ import { PinInput, Group } from "@mantine/core";
 import { MantineProvider, Container, Button, TextInput } from "@mantine/core";
 import logo from "../logo.ico";
 import { useRef, useState } from "react";
-import { client } from "./client/Instance";
+import { client } from "../client/Instance";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
