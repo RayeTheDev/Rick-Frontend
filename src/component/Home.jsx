@@ -26,7 +26,10 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <Carousell />
+      <div className={styles.containerCarousel}>
+        <Carousell />
+
+      </div>
       {/* <Article /> */}
       {/* <Grid /> */}
     </div>

@@ -1,8 +1,12 @@
+
 .containerCarousel {
   padding: 20px;
-  width: 98%;
+  padding-bottom: 0;
+  max-width: 1500px;
+  width: 100%;
   position: absolute;
   top: 70vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +74,39 @@
   .CardImg{
     /* width: ; */
     height: 200px;
+    transform: scale(95%);
 
+  }
+  .CardImg:hover{
+    transform: scale(102%);
+  }
+  .CardImg:active{
+    transform: scale(70%);
+  }
+
+}
+@media only screen and (max-width: 350px) {
+  .containerCarousel {
+    padding: 5px;
+    width: 100%;
+    position: absolute;
+    top: 90vh;
+  }
+   .slide{
+    padding: 5px;
+
+   }
+  .CardImg{
+    /* width: ; */
+    height: 200px;
+    transform: scale(95%);
+
+  }
+  .CardImg:hover{
+    transform: scale(102%);
+  }
+  .CardImg:active{
+    transform: scale(70%);
   }
 
 }

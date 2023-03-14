@@ -32,7 +32,7 @@ export const Carousell = (props) => {
         <p/>
       </div>
       <Carousel
-        height={450}
+        height={"fit-content"}
         slideSize="20%"
         slideGap="md"
         loop
