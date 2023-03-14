@@ -26,6 +26,8 @@ h4{
     height: fit-content;
     font-size: 10px;
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
 }
 @media only screen and (min-width:1400px){
     .flex{
@@ -92,6 +94,7 @@ h4{
     .news{
         width: 550px;   
     }
+    
     .middle{
         width: 100%;
         padding-top: 20px;
@@ -667,9 +670,8 @@ h4{
     }
     .width1{
         display: block;
-      
-        width: 84vw;
-        padding: 40px;
+      padding: 0;
+        width: 90vw;
     }
     .news{
         width: 100%;   
@@ -730,6 +732,7 @@ h4{
     }
     .title{
         padding-left: 20px;
+        font-size: 40px;
     }
     .padding{
         display: flex;

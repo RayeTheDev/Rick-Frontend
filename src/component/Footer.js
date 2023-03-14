@@ -62,7 +62,7 @@ export const Footer = () => {
               <div className={styles.threepart}>
                 <div className={styles.arhi}>
                   <div className={styles.part1}>
-                    <h3>Булангууд</h3>
+                    <h3 className={styles.blu}>Булангууд</h3>
                     <p>Онцлох бизнес</p>
                     <p>Techworm</p>
                     <p>Би хэрхэн ажилладаг вэ?</p>

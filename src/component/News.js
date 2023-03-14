@@ -25,7 +25,7 @@ export const News = () => {
       console.log("100 gass ih");
       setWarn(true);
     }
-    const newComment = { limit: limit, name: name ? name : "zochin" };
+    const newComment = { limit: limit, name: name ? name : "Зочин" };
     setComment([...comment, newComment]);
 
     if (!name) {
@@ -271,7 +271,7 @@ export const News = () => {
             Сэтгэгдэл бичих
           </button>
           <div className={styles.limit}>
-            <div style={{ display: "flex" }}>
+            <div className={styles.hhh}>
               <span style={{ color: "#0078f6" }}>Тэмдэгт:{space}.</span>
               <span>
                 Та 100-с доошгүй тэмдэгт ашиглан санал сэтгэгдлээ бүтээлчээр

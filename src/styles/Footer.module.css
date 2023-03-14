@@ -541,7 +541,6 @@
        height: 40vh;
     }
 }
-
 @media only screen and (max-width:700px){
     .back{
         width: 100%;
@@ -646,7 +645,7 @@
 @media only screen and (max-width:478px){
     .back{
         width: 100%;
-        height: fit-content;
+        height:fit-content;
         background-color: black;
         display: block;
         padding-top: 50px;
@@ -685,13 +684,14 @@
        background-size: cover; 
     }
     .mini{
-        display: flex;
+        /* display: flex;
         color: white;
         gap: 25px;
         font-size: 80%;
         justify-content: space-evenly;
         width: 82vw;
-        padding-top: 35px;
+        padding-top: 35px; */
+        display: none;
     }
     .threepart{
         display: block;
@@ -739,6 +739,7 @@
         display: flex;
         justify-content: space-between;
         width: 90vw;
+        margin-top: 60px;
     }
     .deesh{
         display: flex;
@@ -755,5 +756,8 @@
     }
     .rep{
         font-size: 90%;
+    }
+    .blu{
+       opacity: 0;
     }
 }
