@@ -9,22 +9,32 @@ export const News = () => {
   const [name, setName] = useState([]);
   const [space, setSpace] = useState(0);
   const [warn, setWarn] = useState(false);
+  const [ner, setNer] = useState(false);
   const [comment, setComment] = useState([]);
 
   const Btn = () => {
     var my_string = limit;
     var spaceCount = limit.split(" ").length - 1;
-    setSpace(my_string.length - spaceCount);
+    const charCount = my_string.length - spaceCount
+    setSpace(charCount);
 
-    if (space < 100) {
+    if (charCount < 100) {
       console.log("less than 100");
       setWarn(false);
     } else {
       console.log("100 gass ih");
       setWarn(true);
     }
-    const newComment = { limit: limit, name: name };
+    const newComment = { limit: limit, name: name ? name : "zochin" };
     setComment([...comment, newComment]);
+
+    if (!name) {
+      console.log("noname");
+      setNer(false);
+    } else {
+      console.log("ner");
+      setNer(true);
+    }
   };
 
   return (
@@ -253,7 +263,10 @@ export const News = () => {
           <button
             className={styles.btn}
             onClick={Btn}
-            style={{ backgroundColor: warn ? "#0078f6" : "white" }}
+            style={{
+              backgroundColor: warn ? "#0078f6" : "white",
+              color: warn ? "white" : "grey",
+            }}
           >
             Сэтгэгдэл бичих
           </button>
@@ -272,26 +285,30 @@ export const News = () => {
           {comment.map((give) => {
             console.log(give);
             return (
-              <div>
-                <div className={styles.int}>
-                  <img
-                    src="https://img.freepik.com/premium-photo/rain-water-drop-falling-city-street-floor-heavy-rain-day_1962-2005.jpg?w=2000"
-                    className={styles.pro}
-                  ></img>
-                  <div className={styles.sav}>
-                    <p>{give.name}</p>
-                    <p style={{color:" #0078f6"}}>1 минутын өмнө</p>
+              <div className={styles.opp}>
+                <div className={styles.pl}>
+                  <div className={styles.int}>
+                    <img
+                      src="https://img.freepik.com/premium-photo/rain-water-drop-falling-city-street-floor-heavy-rain-day_1962-2005.jpg?w=2000"
+                      className={styles.pro}
+                    ></img>
+                    <div className={styles.sav}>
+                      <p>{give.name}</p>
+                      <p style={{ color: " #0078f6" }}>1 минутын өмнө</p>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.block}>
-                  <div className={styles.one}>{give.limit}</div>
+                  <div className={styles.block}>
+                    <div className={styles.one}>{give.limit}</div>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };

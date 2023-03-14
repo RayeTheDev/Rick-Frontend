@@ -550,7 +550,7 @@
         display: block;
     }
     .google{
-        width: 40%;
+        width: 96%;
     }
     .boslogo{
         display: flex;
@@ -653,12 +653,14 @@
         padding-bottom: 50px;
     }
     .google{
-        width: 40%;
+        width: 96%;
         padding-bottom: 30px;
     }
     .boslogo{
         display: flex;
         flex-direction: none;
+        justify-content: space-between;
+        width: 100%;
     }
     .pos{
         width: 95%;
