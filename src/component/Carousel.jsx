@@ -6,10 +6,12 @@ import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import photo1 from "./assets/image1.jpeg";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const Carousell = (props) => {
   const autoplay = useRef(Autoplay({ delay: 2500 }));
   const [data, setData] = useState();
+  const Navigate = useNavigate()
   useEffect(() => {
     axios
       .get("http://localhost:3100/articles")
@@ -79,7 +81,7 @@ export const Carousell = (props) => {
           data.map((item, index) => {
             console.log(item);
             return (
-              <Carousel.Slide className={styles.slide}>
+              <Carousel.Slide className={styles.slide} onClick={() => Navigate("/news/" + item._id)}>
                 <Card
                   className={`text-white ${styles.CardImg}`}
                   style={{
@@ -111,30 +113,6 @@ export const Carousell = (props) => {
             );
           })}
 
-        {/* <Carousel.Slide className={styles.slide}>
-          {ImgOverlayExample()}
-        </Carousel.Slide>
-        <Carousel.Slide className={styles.slide}>
-          {ImgOverlayExample()}
-        </Carousel.Slide>
-        <Carousel.Slide className={styles.slide}>
-          {ImgOverlayExample()}
-        </Carousel.Slide>
-        <Carousel.Slide className={styles.slide}>
-          {ImgOverlayExample()}
-        </Carousel.Slide>
-        <Carousel.Slide className={styles.slide}>
-          {ImgOverlayExample()}
-        </Carousel.Slide>
-        <Carousel.Slide className={styles.slide}>
-          {ImgOverlayExample()}
-        </Carousel.Slide>
-        <Carousel.Slide className={styles.slide}>
-          {ImgOverlayExample()}
-        </Carousel.Slide>
-        <Carousel.Slide className={styles.slide}>
-          {ImgOverlayExample()}
-        </Carousel.Slide> */}
       </Carousel>
     </div>
   );

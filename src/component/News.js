@@ -3,199 +3,134 @@ import { AiFillCodeSandboxCircle } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
 import { Footer } from "../component";
+import { useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 export const News = () => {
+  const { id } = useParams();
+  const [data, setData] = useState();
+  const ref = useRef(null);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3100/articles/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  useEffect(() => {
+    if (data) ref.current.innerHTML = data.texts; 
+    console.log(ref);
+  }, [data]);
   return (
-    <>
-      <div className={styles.flex}>
-        <div className={styles.width}>
-          <div className={styles.padding} >
-            <p style={{ color: "#0078f6", fontSize: "13px",paddingRight:"20px" }}>
-              7 ХОНОГИЙН ТОЙМ
-            </p>
-            <p style={{ color: " #6d7378", fontSize: "13px" }}>
-              {" "}
-              2 САРЫН 26, 2023. 9 МИН
-            </p>
+    data && (
+      <>
+        <div className={styles.flex}>
+          <div className={styles.width}>
+            <div className={styles.padding}>
+              <p
+                style={{
+                  color: "#0078f6",
+                  fontSize: "13px",
+                  paddingRight: "20px",
+                }}
+              >
+                {data.category[0].name}
+              </p>
+              <p style={{ color: " #6d7378", fontSize: "13px" }}>
+                {" "}
+                {/* 2 САРЫН 26, 2023. 9 МИН
+                 */}
+                {data.createdAt}
+              </p>
+            </div>
+            <div className={styles.title}>{data.title}</div>
+            <img src={data.photoUrl} className={styles.pic_news}></img>
           </div>
-          <div className={styles.title}>Нэг жил + Олеато + Ухаалаг уруул</div>
-          <img
-            src="https://sportshub.cbsistatic.com/i/2023/02/09/8184e079-1bf8-49f1-91ac-03c560d00d04/attack-on-titan-final-season-part-3-everything-we-know-release-date-episode-number-story-spoilers.jpg"
-            className={styles.pic_news}
-          ></img>
-        </div>
-        <div className={styles.width1}>
-          <div style={{ display: "block" }}>
-            <div className={styles.publish}>
-              <img
-                src="https://m.media-amazon.com/images/M/MV5BMmQ3NzVmOWUtNTQ5Yi00MDczLWIxMDYtNGU5ZGU2YjI1NDY2XkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg"
-                className={styles.pub_pic}
-              ></img>
-              <div className={styles.nii}>
-                <p style={{ color: "#888888", fontSize: "12px" }}>Нийтэлсэн:</p>
-                <p style={{ fontSize: "15px" }}>B.Barjargal</p>
+          <div className={styles.width1}>
+            <div style={{ display: "block" }}>
+              <div className={styles.publish}>
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMmQ3NzVmOWUtNTQ5Yi00MDczLWIxMDYtNGU5ZGU2YjI1NDY2XkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg"
+                  className={styles.pub_pic}
+                ></img>
+                <div className={styles.nii}>
+                  <p style={{ color: "#888888", fontSize: "12px" }}>
+                    Нийтэлсэн:
+                  </p>
+                  <p style={{ fontSize: "15px" }}>B.Barjargal</p>
+                </div>
+              </div>
+              <div className={styles.help}>
+                <div className={styles.hhr}></div>
+                <div
+                  style={{
+                    color: "#888888",
+                    fontSize: "12px",
+                    paddingTop: "20px",
+                  }}
+                >
+                  Нийтлэлд оролцсон:
+                </div>
+                <spam style={{ fontSize: "15px" }}>Г.Оюунлхам</spam>
+                <div
+                  style={{
+                    color: "#888888",
+                    fontSize: "12px",
+                    paddingTop: "20px",
+                  }}
+                >
+                  Гэрэл зургийг:
+                </div>
+                <spam style={{ fontSize: "15px" }}>Б.Анарбаяр</spam>
               </div>
             </div>
-            <div className={styles.help}>
-              <div className={styles.hhr}></div>
-              <div style={{ color: "#888888", fontSize: "12px" , paddingTop: "20px",}}>
-                Нийтлэлд оролцсон:
-              </div>
-              <spam style={{ fontSize: "15px" }}>Г.Оюунлхам</spam>
-              <div
+
+            <div className={styles.news}>
+              <p
                 style={{
                   color: "#888888",
-                  fontSize: "12px",
-                  paddingTop: "20px",
+                  paddingTop: "6px",
+                  fontSize: "13px",
                 }}
               >
-                Гэрэл зургийг:
+                Хандалт / Сэтгэгдэл:
+              </p>
+              <div style={{  display: "flex",alignItems:"center",gap:"5px" }}>
+                <div style={{ marginRight: "20px" }}>
+                  {" "}
+                  <AiFillEye />
+                  <span>{data.views}</span>
+                </div>
+                <FaComment />
+                <span>{data.comment.length}</span>
               </div>
-              <spam style={{ fontSize: "15px" }}>Б.Анарбаяр</spam>
+              <div className={styles.main} ref={ref}></div>
+            </div>
+            <div className={styles.publish1} style={{ fontSize: "35px" }}>
+              <AiFillCodeSandboxCircle />
+              <AiFillCodeSandboxCircle />
+              <AiFillCodeSandboxCircle />
             </div>
           </div>
-
-          <div className={styles.news}>
-            <p
-              style={{ color: "#888888", paddingTop: "6px", fontSize: "13px" }}
-            >
-              Хандалт / Сэтгэгдэл:
-            </p>
-            <div style={{ paddingTop: "10px", display: "flex" }}>
-              <div style={{ marginRight: "20px" }}>
-                {" "}
-                <AiFillEye />
-                1866
-              </div>
-              <FaComment />9
+          <div className={styles.com}>
+            <h2>setgegdel bichih</h2>
+            <div className={styles.con}>
+              <input className={styles.input} placeholder="your name"></input>
+              <input
+                className={styles.input1}
+                placeholder="your comment"
+              ></input>
             </div>
-            <div className={styles.main}>
-              <h1
-                style={{
-                  paddingTop: "50px",
-                  paddingBottom: "30px",
-                  paddingLeft: "0",
-                }}
-                className={styles.mainsubject}
-              >
-                1 ГОЛ СЭДЭВ
-              </h1>
-              <p className={styles.p}>
-                ОХУ Украин руу халдан довтолсноос хойш яг нэг жил өнгөрчээ.
-                Дэлхийн эдийн засаг, геополитик, нийгмийн амьдралд онцгой нөлөө
-                үзүүлсээр байгаа энэ дайны уршгаар 7000 гаруй энгийн иргэд амиа
-                алдаж, Украины хүн амын 20-оос илүү хувь буюу 8 сая гаруй эх
-                нутгаа орхин дүрвэхээс өөр аргагүйд хүрчээ. Дайнд амиа алдсан
-                цэргүүдийн тоо харин хамгийн багадаа 300 мянгаар хэмжигдэнэ
-                хэмээн НҮБ тооцож байна. Хуваагдсан дэлхий Олон арван бүслэлт,
-                зуу зуун бөмбөгдөлтийн улмаас хот суурин, дэд бүтэц сүйрсний
-                улмаас Украин улсын эдийн засаг үлэмж хохирол амсаад байна. АНУ,
-                Европын Холбоо тэргүүтэй барууны орнууд нийт 130 тэрбум орчим
-                долларын тусламжийг тус улсад илгээж, цэрэг зэвсэг, хүмүүнлэгийн
-                дэмжлэгээ улам нэмэгдүүлсээр байна. ОХУ-ын эдийн засгийн агшилт
-                ердөө 2%-тай гарсан нь олон эдийн засагчдыг гайхшруулах үзүүлэлт
-                ч зөвхөн ДНБ-ийн үзүүлэлт бодит нөхцөл байдлыг бүрэн илтгэхгүй
-                гэдгийг сануулсаар байна. Гэнэтийн айлчлал Өнгөрсөн долоо хоногт
-                АНУ-ын ерөнхийлөгч Ж.Байден өөрийн биеэр Киевт хүрэлцэн ирж,
-                Украиныг дэмжсээр байх болно гэдгээ мэдэгдлээ. Үүнтэй зэрэгцэн
-                Оросод зэр зэвсгийн дэмжлэг үзүүлж магадгүй хэмээн хардагдаж
-                байсан БНХАУ албан ёсоор мэдэгдэл гаргаж, энх тайвныг эрхэмлэсэн
-                дундыг сахисан байр сууриа бататгажээ. НҮБ дайны нэг жилийн
-                босгон дээр ОХУ-ыг цэргээ ямар ч нөхцөлгүйгээр гаргахыг шаардсан
-                тогтоолд санал хураахад 141 улс дэмжиж, 32 улс түдгэлзсэний
-                дотор Монгол улс багтав. ОХУ Украин руу халдан довтолсноос хойш
-                яг нэг жил өнгөрчээ. Дэлхийн эдийн засаг, геополитик, нийгмийн
-                амьдралд онцгой нөлөө үзүүлсээр байгаа энэ дайны уршгаар 7000
-                гаруй энгийн иргэд амиа алдаж, Украины хүн амын 20-оос илүү хувь
-                буюу 8 сая гаруй эх нутгаа орхин дүрвэхээс өөр аргагүйд хүрчээ.
-                Дайнд амиа алдсан цэргүүдийн тоо харин хамгийн багадаа 300
-                мянгаар хэмжигдэнэ хэмээн НҮБ тооцож байна. Хуваагдсан дэлхий
-                Олон арван бүслэлт, зуу зуун бөмбөгдөлтийн улмаас хот суурин,
-                дэд бүтэц сүйрсний улмаас Украин улсын эдийн засаг үлэмж хохирол
-                амсаад байна. АНУ, Европын Холбоо тэргүүтэй барууны орнууд нийт
-                130 тэрбум орчим долларын тусламжийг тус улсад илгээж, цэрэг
-                зэвсэг, хүмүүнлэгийн дэмжлэгээ улам нэмэгдүүлсээр байна. ОХУ-ын
-                эдийн засгийн агшилт ердөө 2%-тай гарсан нь олон эдийн засагчдыг
-                гайхшруулах үзүүлэлт ч зөвхөн ДНБ-ийн үзүүлэлт бодит нөхцөл
-                байдлыг бүрэн илтгэхгүй гэдгийг сануулсаар байна. Гэнэтийн
-                айлчлал Өнгөрсөн долоо хоногт АНУ-ын ерөнхийлөгч Ж.Байден өөрийн
-                биеэр Киевт хүрэлцэн ирж, Украиныг дэмжсээр байх болно гэдгээ
-                мэдэгдлээ. Үүнтэй зэрэгцэн Оросод зэр зэвсгийн дэмжлэг үзүүлж
-                магадгүй хэмээн хардагдаж байсан БНХАУ албан ёсоор мэдэгдэл
-                гаргаж, энх тайвныг эрхэмлэсэн дундыг сахисан байр сууриа
-                бататгажээ. НҮБ дайны нэг жилийн босгон дээр ОХУ-ыг цэргээ ямар
-                ч нөхцөлгүйгээр гаргахыг шаардсан тогтоолд санал хураахад 141
-                улс дэмжиж, 32 улс түдгэлзсэний дотор Монгол улс багтав.
-              </p>
-              <img
-                src="https://unread.today/files/44/7f112255abafcfe54afb3a6bb0a57f36.gif"
-                className={styles.middle}
-              ></img>
-              <p className={styles.p}>
-                ОХУ Украин руу халдан довтолсноос хойш яг нэг жил өнгөрчээ.
-                Дэлхийн эдийн засаг, геополитик, нийгмийн амьдралд онцгой нөлөө
-                үзүүлсээр байгаа энэ дайны уршгаар 7000 гаруй энгийн иргэд амиа
-                алдаж, Украины хүн амын 20-оос илүү хувь буюу 8 сая гаруй эх
-                нутгаа орхин дүрвэхээс өөр аргагүйд хүрчээ. Дайнд амиа алдсан
-                цэргүүдийн тоо харин хамгийн багадаа 300 мянгаар хэмжигдэнэ
-                хэмээн НҮБ тооцож байна. Хуваагдсан дэлхий Олон арван бүслэлт,
-                зуу зуун бөмбөгдөлтийн улмаас хот суурин, дэд бүтэц сүйрсний
-                улмаас Украин улсын эдийн засаг үлэмж хохирол амсаад байна. АНУ,
-                Европын Холбоо тэргүүтэй барууны орнууд нийт 130 тэрбум орчим
-                долларын тусламжийг тус улсад илгээж, цэрэг зэвсэг, хүмүүнлэгийн
-                дэмжлэгээ улам нэмэгдүүлсээр байна. ОХУ-ын эдийн засгийн агшилт
-                ердөө 2%-тай гарсан нь олон эдийн засагчдыг гайхшруулах үзүүлэлт
-                ч зөвхөн ДНБ-ийн үзүүлэлт бодит нөхцөл байдлыг бүрэн илтгэхгүй
-                гэдгийг сануулсаар байна. Гэнэтийн айлчлал Өнгөрсөн долоо хоногт
-                АНУ-ын ерөнхийлөгч Ж.Байден өөрийн биеэр Киевт хүрэлцэн ирж,
-                Украиныг дэмжсээр байх болно гэдгээ мэдэгдлээ. Үүнтэй зэрэгцэн
-                Оросод зэр зэвсгийн дэмжлэг үзүүлж магадгүй хэмээн хардагдаж
-                байсан БНХАУ албан ёсоор мэдэгдэл гаргаж, энх тайвныг эрхэмлэсэн
-                дундыг сахисан байр сууриа бататгажээ. НҮБ дайны нэг жилийн
-                босгон дээр ОХУ-ыг цэргээ ямар ч нөхцөлгүйгээр гаргахыг шаардсан
-                тогтоолд санал хураахад 141 улс дэмжиж, 32 улс түдгэлзсэний
-                дотор Монгол улс багтав. ОХУ Украин руу халдан довтолсноос хойш
-                яг нэг жил өнгөрчээ. Дэлхийн эдийн засаг, геополитик, нийгмийн
-                амьдралд онцгой нөлөө үзүүлсээр байгаа энэ дайны уршгаар 7000
-                гаруй энгийн иргэд амиа алдаж, Украины хүн амын 20-оос илүү хувь
-                буюу 8 сая гаруй эх нутгаа орхин дүрвэхээс өөр аргагүйд хүрчээ.
-                Дайнд амиа алдсан цэргүүдийн тоо харин хамгийн багадаа 300
-                мянгаар хэмжигдэнэ хэмээн НҮБ тооцож байна. Хуваагдсан дэлхий
-                Олон арван бүслэлт, зуу зуун бөмбөгдөлтийн улмаас хот суурин,
-                дэд бүтэц сүйрсний улмаас Украин улсын эдийн засаг үлэмж хохирол
-                амсаад байна. АНУ, Европын Холбоо тэргүүтэй барууны орнууд нийт
-                130 тэрбум орчим долларын тусламжийг тус улсад илгээж, цэрэг
-                зэвсэг, хүмүүнлэгийн дэмжлэгээ улам нэмэгдүүлсээр байна. ОХУ-ын
-                эдийн засгийн агшилт ердөө 2%-тай гарсан нь олон эдийн засагчдыг
-                гайхшруулах үзүүлэлт ч зөвхөн ДНБ-ийн үзүүлэлт бодит нөхцөл
-                байдлыг бүрэн илтгэхгүй гэдгийг сануулсаар байна. Гэнэтийн
-                айлчлал Өнгөрсөн долоо хоногт АНУ-ын ерөнхийлөгч Ж.Байден өөрийн
-                биеэр Киевт хүрэлцэн ирж, Украиныг дэмжсээр байх болно гэдгээ
-                мэдэгдлээ. Үүнтэй зэрэгцэн Оросод зэр зэвсгийн дэмжлэг үзүүлж
-                магадгүй хэмээн хардагдаж байсан БНХАУ албан ёсоор мэдэгдэл
-                гаргаж, энх тайвныг эрхэмлэсэн дундыг сахисан байр сууриа
-                бататгажээ. НҮБ дайны нэг жилийн босгон дээр ОХУ-ыг цэргээ ямар
-                ч нөхцөлгүйгээр гаргахыг шаардсан тогтоолд санал хураахад 141
-                улс дэмжиж, 32 улс түдгэлзсэний дотор Монгол улс багтав.
-              </p>
-            </div>
-          </div>
-          <div className={styles.publish1} style={{ fontSize: "35px" }}>
-            <AiFillCodeSandboxCircle />
-            <AiFillCodeSandboxCircle />
-            <AiFillCodeSandboxCircle />
+            <button className={styles.btn}>comment</button>
           </div>
         </div>
-        <div className={styles.com}>
-          <h2>setgegdel bichih</h2>
-          <div className={styles.con}>
-            <input className={styles.input} placeholder="your name"></input>
-            <input className={styles.input1} placeholder="your comment"></input>
-          </div>
-          <button className={styles.btn}>comment</button>
-        </div>
-      </div>
-      <Footer />
-    </>
+        <Footer />
+      </>
+    )
   );
 };
 // style={{ display: "flex", gap: "20px" }}

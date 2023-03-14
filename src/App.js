@@ -11,7 +11,9 @@ function App(){
                 <Route path="/carousel" element={<Carousell />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
-                <Route path="/news" element={<News />} />
+                <Route path="/news"  >
+                <Route path=":id"element={<News />}></Route>
+                </Route>
                 <Route path="/comment" element={<Comment />} />
                 <Route path="/confirmation" element={<Confirmation />} />
               </Routes>
