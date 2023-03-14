@@ -1,59 +1,19 @@
 import styles from "./styles/Carousel.module.css";
 import { Carousel } from "@mantine/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import photo1 from "./assets/image1.jpeg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { DataContext } from "./context/Data.Provider";
 
 export const Carousell = (props) => {
   const autoplay = useRef(Autoplay({ delay: 2500 }));
-  const [data, setData] = useState();
-  const Navigate = useNavigate()
-  useEffect(() => {
-    axios
-      .get("http://localhost:3100/articles")
-      .then((res) => {
-        console.log(res.data);
-        const arr=[...res.data]
-        const arr2=[]
-        for(let i=arr.length-1;i>=0;i--){
-          arr2.push(arr[i])
+  const { data } = useContext(DataContext);
+  const Navigate = useNavigate();
 
-        }
-        console.log(arr2)
-        setData(arr2);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  const ImgOverlayExample = (props) => {
-    return (
-      <Card
-        className={`bg-dark text-white ${styles.CardImg}`}
-        style={{
-          backgroundImage: `url("${photo1}")`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderRadius: "15px",
-        }}
-      >
-        <Card.ImgOverlay className={`${styles.Card}`}>
-          <Card.Text>3 mins ago</Card.Text>
-          <div>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>This is a wider card with supporting text.</Card.Text>
-            <div>Techworm</div>
-          </div>
-        </Card.ImgOverlay>
-      </Card>
-    );
-  };
   return (
     <div className={styles.containerCarousel}>
       <div className={styles.carouselText}>
@@ -81,7 +41,10 @@ export const Carousell = (props) => {
           data.map((item, index) => {
             console.log(item);
             return (
-              <Carousel.Slide className={styles.slide} onClick={() => Navigate("/news/" + item._id)}>
+              <Carousel.Slide
+                className={styles.slide}
+                onClick={() => Navigate("/news/" + item._id)}
+              >
                 <Card
                   className={`text-white ${styles.CardImg}`}
                   style={{
@@ -95,7 +58,11 @@ export const Carousell = (props) => {
                   <div className={styles.containerFilterCarousel}>
                     <Card.ImgOverlay className={`${styles.Card}`}>
                       <div className={styles.timeCont}>
-                        <Card.Text>{item.createdAt.slice(5,7)+" сарын "+item.createdAt.slice(8,10)  }</Card.Text>
+                        <Card.Text>
+                          {item.createdAt.slice(5, 7) +
+                            " сарын " +
+                            item.createdAt.slice(8, 10)}
+                        </Card.Text>
                       </div>
 
                       <div>
@@ -112,7 +79,6 @@ export const Carousell = (props) => {
               </Carousel.Slide>
             );
           })}
-
       </Carousel>
     </div>
   );

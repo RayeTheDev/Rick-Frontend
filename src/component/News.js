@@ -35,6 +35,7 @@ export const News = () => {
       console.log(commentDiv);
         axios.post("http://localhost:3100/comments/",commentDiv).then((res)=>{
           console.log("Comment posted",res.data)
+          setComment([...comment,res.data])
         }).catch((err)=>{console.log(err)})
     }
 
@@ -224,6 +225,30 @@ export const News = () => {
                 </span>
               </div>
             </div>
+            <div className={styles.setgegdel}>
+          {comment.map((give) => {
+            console.log(give);
+            return (
+              <div className={styles.opp}>
+                <div className={styles.pl}>
+                  <div className={styles.int}>
+                    <img
+                      src="https://img.freepik.com/premium-photo/rain-water-drop-falling-city-street-floor-heavy-rain-day_1962-2005.jpg?w=2000"
+                      className={styles.pro}
+                    ></img>
+                    <div className={styles.sav}>
+                      <p>{give.name}</p>
+                      <p style={{ color: " #0078f6" }}>1 минутын өмнө</p>
+                    </div>
+                  </div>
+                  <div className={styles.block}>
+                    <div className={styles.one}>{give.texts}</div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
           </div>
         </div>
         <Footer />
