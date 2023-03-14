@@ -117,20 +117,60 @@ export const News = () => {
             </div>
           </div>
           <div className={styles.com}>
-            <h2>setgegdel bichih</h2>
-            <div className={styles.con}>
-              <input className={styles.input} placeholder="your name"></input>
-              <input
-                className={styles.input1}
-                placeholder="your comment"
-              ></input>
-            </div>
-            <button className={styles.btn}>comment</button>
+          <div style={{ display: "flex", marginBottom: "20px" }}>
+            <img
+              src="https://unread.today/img/comment.png"
+              style={{
+                height: "26px",
+                marginTop: "10px",
+                marginRight: "7px",
+                fontFamily: "'SF Display', sans-serif",
+              }}
+            ></img>
+            <h4>Сэтгэгдэл бичих</h4>
           </div>
+          <div className={styles.con}>
+            <input
+              className={styles.input}
+              placeholder="таны нэр"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <textarea
+              id="w3review"
+              name="w3review"
+              rows="6"
+              cols="30"
+              placeholder="сэтгэгдэл"
+              value={limit}
+              onChange={(e) => setLimit(e.target.value)}
+            ></textarea>
+          </div>
+          <button
+            className={styles.btn}
+            onClick={Btn}
+            style={{
+              backgroundColor: warn ? "#0078f6" : "white",
+              color: warn ? "white" : "grey",
+            }}
+          >
+            Сэтгэгдэл бичих
+          </button>
+          <div className={styles.limit}>
+            <div className={styles.hhh}>
+              <span style={{ color: "#0078f6" }}>Тэмдэгт:{space}.</span>
+              <span>
+                Та 100-с доошгүй тэмдэгт ашиглан санал сэтгэгдлээ бүтээлчээр
+                үлдээгээрэй. Хамтдаа сэтгэгдэл бичих соёлыг Монголд бий
+                болгоцгооё.
+              </span>
+            </div>
+          </div>
+        </div>
         </div>
         <Footer />
       </>
     )
   );
 };
-// style={{ display: "flex", gap: "20px" }}
+
