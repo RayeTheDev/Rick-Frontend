@@ -1,0 +1,274 @@
+* {
+  font-family: "SF Display", sans-serif;
+}
+
+.go_signup {
+  display: none;
+}
+.login_style {
+  font-size: 33px;
+  font-family: "SF Display", sans-serif;
+  color: rgb(0, 54, 115);
+  font-weight: 800;
+}
+.just {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+}
+.loadingContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loadingInnerSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.loadingText {
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+}
+.login_page {
+  width: 70%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.signText {
+  color: black;
+  font-size: 14px;
+}
+hr {
+  width: 100%;
+}
+.midContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.midText {
+  text-decoration: none;
+  color: gray;
+  transition: 100ms;
+}
+.midText:hover {
+  color: blue;
+  text-decoration: underline;
+  transform: scale(103%);
+  padding-right: 5px;
+}
+.intro_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.input {
+  width: 380px;
+}
+.signupAdd {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.btn_1 {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 140px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgb(0, 51, 126);
+  color: white;
+  cursor: pointer;
+  transition: 100ms;
+}
+.btn_3:active,
+.btn_1:active,
+.btn_2:active {
+  transform: scale(95%);
+}
+.btn_3 {
+  width: 140px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: black;
+  border-radius: 20px;
+  font-size: 18px;
+  border: 1px solid gray;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_3:hover {
+  background-color: rgba(226, 225, 225, 0.652);
+}
+.btn_1:hover {
+  background-color: rgb(4, 80, 196);
+}
+.btn_2:hover {
+  background-color: rgb(189, 197, 207);
+}
+@media screen and (min-width: 770px) {
+  .one {
+    display: flex;
+    /* justify-content: space-between; */
+  }
+
+  .login_page {
+    width: 70vw;
+    height: 100%;
+    background-color: white;
+    border-radius: 0;
+    padding: 0;
+  }
+  .go_signup {
+    width: 30vw;
+    height: 100vh;
+    background-color: rgb(0, 51, 126);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .intro_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+  }
+  .p {
+    color: white;
+  }
+  .new_font {
+    font-size: 40px;
+    padding-left: 3rem;
+    color: white;
+  }
+  .sign_font {
+    padding: 3rem;
+    font-size: 30px;
+    color: white;
+  }
+  .btn_2 {
+    width: 140px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+    font-size: 18px;
+    background-color: white;
+    margin-left: 3rem;
+    cursor: pointer;
+  }
+  .login_style {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+  }
+  .infoContainer {
+    width: 80%;
+  }
+  .btn_1 {
+    width: 140px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .new_font {
+    font-size: 33px;
+  }
+  .sign_font {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .new_font {
+    font-size: 28px;
+  }
+  .sign_font {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .input {
+    width: 330px;
+  }
+}
+@media screen and (max-width: 510px) {
+  .input {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login_page {
+    width: 75%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .input {
+    width: 280px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .login_page {
+    height: 60%;
+  }
+  .input {
+    width: 240px;
+  }
+  .btn_1 {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .login_page {
+    height: 95%;
+  }
+  .input {
+    width: 200px;
+  }
+  .btn_1 {
+    font-size: 16px;
+  }
+}

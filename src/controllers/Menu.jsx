@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { DataContext } from "./context/Data.Provider";
 import { BsDot } from "react-icons/bs";
 import styles from "./styles/Menu.module.css";
+import { useNavigate } from "react-router-dom";
 
 export const Menu = () => {
   const { menu } = useContext(DataContext);
+  const Navigate=useNavigate()
   return (
     <div
       className={
@@ -61,7 +63,7 @@ export const Menu = () => {
           </div>
         </div>
         <div className={styles.main_footer}>
-          <div className={styles.first}>
+          <div className={styles.first} onClick={()=>{Navigate("/login")}}>
             <p className={styles.p1}>Хамтран ажиллах хүсэлт илгээх</p>
             <h3 className={styles.h3}>КОНТЕНТ НИЙТЛҮҮЛЭХ</h3>
           </div>

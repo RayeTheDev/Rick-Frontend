@@ -43,6 +43,7 @@
     overflow: hidden;
     border-radius: 20px;
     width: 40%;
+    aspect-ratio: 1/1;
 }
 .news_image_con2 {
     display: none;
@@ -76,6 +77,7 @@
 .content {
     padding-left: 61px;
     padding-top: 45px;
+    cursor: pointer;
 }
 .today {
     font-size: 14px;

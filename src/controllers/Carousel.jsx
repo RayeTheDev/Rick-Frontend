@@ -1,54 +1,83 @@
 import styles from "./styles/Carousel.module.css";
 import { Carousel } from "@mantine/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
-// "style={{transform:`scale(${props.res}%)`}}"
+import { useContext, useEffect, useRef, useState } from "react";
+import Card from "react-bootstrap/Card";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
+import { DataContext } from "./context/Data.Provider";
+
 export const Carousell = (props) => {
-  const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const autoplay = useRef(Autoplay({ delay: 2500 }));
+  const { data } = useContext(DataContext);
+  const Navigate = useNavigate();
 
   return (
-    <div className={styles.carouselContainer}>
-      <div className={styles.div}>
-        <Carousel
-          // withIndicators
-          // className={styles.secondCarousel}
-          // height={400}
-          // slideSize="17.3%"
-          // plugins={[autoplay.current]}
-          // onMouseEnter={autoplay.current.stop}
-          // onMouseLeave={autoplay.current.reset}
-          // // breakpoints={[
-          // //   { maxWidth: "lg", slideSize: "400px" },
-          // //   { maxWidth: "lg", slideSize: "400px" },
-          // //   { maxWidth: "md", slideSize: "400px" },
-          // //   { maxWidth: "sm", slideSize: "550px" },
-          // // ]}
-          // loop
-          // align="start"
-          withIndicators
-          className={styles.secondCarousel}
-          height="400px"
-          slideSize="17.111%"
-          slideGap="md"
-          breakpoints={
-            [
-              {maxWidth: "1600px", slideSize: "1%"},
-              { maxWidth: "md", slideSize: "14%"   },
-              { maxWidth: "sm", slideSize: "100%", slideGap: 0 },
-            ]
-          }
-          loop
-          align="start"
-        >
-          <Carousel.Slide className={styles.slide}>1</Carousel.Slide>
-          <Carousel.Slide className={styles.slide}>2</Carousel.Slide>
-          <Carousel.Slide className={styles.slide}>3</Carousel.Slide>
-          <Carousel.Slide className={styles.slide}>4</Carousel.Slide>
-          <Carousel.Slide className={styles.slide}>5</Carousel.Slide>
-          <Carousel.Slide className={styles.slide}>6</Carousel.Slide>
-          <Carousel.Slide className={styles.slide}>7</Carousel.Slide>
-        </Carousel>
+    <div className={styles.containerCarousel}>
+      <div className={styles.carouselText}>
+        <p className="text-white">Редакцын сонголт</p>
+        <p />
       </div>
+      <Carousel
+        height={"fit-content"}
+        slideSize="20%"
+        slideGap="md"
+        loop
+        align="start"
+        breakpoints={[
+          { maxWidth: "md", slideSize: "33.3333%" },
+          { maxWidth: "xs", slideSize: "60%" },
+        ]}
+        withControls={false}
+        plugins={[autoplay.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
+        onClick={autoplay.current.reset}
+        style={{ scrollSnapType: "x mandatory" }}
+      >
+        {data &&
+          data.map((item, index) => {
+            return (
+              <Carousel.Slide
+                className={styles.slide}
+                onClick={() => Navigate("/news/" + item._id)}
+                key={item+index}
+              >
+                <Card
+                  className={`text-white ${styles.CardImg}`}
+                  style={{
+                    backgroundImage: `url("${item.photoUrl}")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    borderRadius: "15px",
+                  }}
+                >
+                  <div className={styles.containerFilterCarousel}>
+                    <Card.ImgOverlay className={`${styles.Card}`}>
+                      <div className={styles.timeCont}>
+                        <Card.Text>
+                          {item.createdAt.slice(5, 7) +
+                            " сарын " +
+                            item.createdAt.slice(8, 10)}
+                        </Card.Text>
+                      </div>
+
+                      <div>
+                        <Card.Title className={styles.carouselText}>
+                          {item.title}
+                        </Card.Title>
+                        <button className={styles.categoryButton}>
+                          {item.category[0].name}
+                        </button>
+                      </div>
+                    </Card.ImgOverlay>
+                  </div>
+                </Card>
+              </Carousel.Slide>
+            );
+          })}
+      </Carousel>
     </div>
   );
 };

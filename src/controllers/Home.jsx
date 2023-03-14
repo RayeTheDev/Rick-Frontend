@@ -1,19 +1,30 @@
-import styles from "./styles/Home.module.css";
-import background from "./assets/background.png";
-import heviinBoov from "./assets/heviinboov.jpeg";
-import { Carousell } from "./Carousel";
-import { Grid } from "./Grid";
-import { Article } from "./Article";
-import { FirstNews } from "./FirstNews";
-import { Menu } from "./Menu";
+import styles from './styles/Home.module.css'
+import { Carousell } from './Carousel'
+import { Grid } from './Grid'
+import { Article } from './Article'
+import { FirstNews } from './FirstNews'
+import { Menu } from './Menu'
+import { useContext } from 'react'
+import { DataContext } from './context/Data.Provider'
+import { useNavigate } from 'react-router-dom'
+import { Loading } from './loading'
+import { Header } from './Header'
 
 export const Home = () => {
+  const { data } = useContext(DataContext)
   return (
-    <div className={styles.controller}>
-      <Menu className={styles.menu}/>
-      <FirstNews className={styles.firstnews}/>
-      <Article className={styles.article}/>
-      <Grid className={styles.grid}/>
-    </div>
-  );
-};
+    (!data && <Loading />) ||
+    (data && (
+      <div className={styles.controller}>
+        <Header />
+        <Menu className={styles.menu} />
+        <FirstNews className={styles.firstnews} />
+        <div className={styles.containerCarousel}>
+          <Carousell />
+        </div>
+        <Article className={styles.article} />
+        <Grid className={styles.grid} />
+      </div>
+    ))
+  )
+}
