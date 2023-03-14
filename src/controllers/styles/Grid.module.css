@@ -80,6 +80,91 @@
   width: 264px;
   height: 100%;
 }
+.blur {
+  display: block;
+  position: absolute;
+  width: 498px;
+  height: 80px;
+  top: 220px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: black;
+  opacity: 0.8;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.blur1 {
+  display: block;
+  position: absolute;
+  width: 214px;
+  height: 50px;
+  top: 190px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: black;
+  opacity: 0.8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.blur2 {
+  display: block;
+  position: absolute;
+  width: 214px;
+  height: 60px;
+  top: 190px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: black;
+  opacity: 0.8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.blur3 {
+  display: block;
+  position: absolute;
+  width: 214px;
+  height: 60px;
+  bottom: 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: black;
+  opacity: 0.8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.blur4 {
+  display: block;
+  position: absolute;
+  width: 214px;
+  height: 60px;
+  bottom: 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: black;
+  opacity: 0.8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.small_title {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: grey;
+}
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
 @media only screen and (max-width: 1220px) {
   :root {
     --card_width: 468px 234px 234px;
@@ -91,6 +176,42 @@
   }
   .card_small {
     height: 215px;
+  }
+  .blur {
+    height: 60px;
+    width: 398px;
+    top: 180px;
+  }
+  .blur1 {
+    padding-top: 12px;
+    padding-left: 17px;
+    height: 48px;
+    width: 172px;
+    top: 155px;
+  }
+  .blur2 {
+    padding-top: 12px;
+    padding-left: 17px;
+    height: 48px;
+    width: 172px;
+    top: 155px;
+  }
+  .blur3 {
+    padding-top: 12px;
+    padding-left: 17px;
+    height: 48px;
+    width: 172px;
+    top: 435px;
+  }
+  .blur4 {
+    padding-top: 12px;
+    padding-left: 17px;
+    height: 48px;
+    width: 172px;
+    top: 440px;
+  }
+  .title {
+    font-size: 13px;
   }
 }
 @media only screen and (max-width: 980px) {
