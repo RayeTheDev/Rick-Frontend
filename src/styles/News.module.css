@@ -128,6 +128,100 @@ body {
     display: flex;
     gap: 20px;
   }
+
+  .com{
+    height: fit-content;
+    width: 100vw;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    margin-bottom: 15vh;
+}
+.con{
+    height: 50%;
+    width: 20%;
+    background-color: white;
+    border-radius: 0.4rem;
+    padding: 20px;
+}
+.input{
+    border: 0;
+    height: 45%;
+    width: 100%;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding-bottom: 5px;
+}
+.input1{
+    border: 0;
+    width: 100%;
+    height: 55%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.btn{
+    width: 20%;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   margin-top: 20px;
+   height: 37px;
+   border: 1px solid rgb(219, 219, 219);
+   background-color: #fafafa;
+   font-size: 14px;
+}
+.p{
+    color:black;
+}
+.new{
+    display: flex;
+}
+.padding{
+    display: flex;
+    gap:20px
+}
+.setgegdel{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 28%;
+    flex-direction: column-reverse;
+}
+.block{
+    height: fit-content;
+    max-width: 450px;
+    width: fit-content;
+    border: 1px solid #e6e6e6;
+    border-radius: 1.8rem 0 1.8rem 1.8rem;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.pro{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+.int{
+    display: flex;
+    gap: 10px;
+}
+.sav{
+    display: block;
+    font-size: 13px;
+}
+.pl:nth-child(even){
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-color: red;
+    
+}
+.opp:nth-child(even){
+    display: flex;
+    flex-direction: row-reverse;
+
+}
 }
 @media only screen and (max-width: 1400px) {
   .main {
