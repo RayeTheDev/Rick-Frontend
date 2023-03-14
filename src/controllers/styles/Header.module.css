@@ -1,25 +1,51 @@
-.container {
+.header_container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   width: 100vw;
-  height: 85px;
+  height: 87px;
 }
 .header {
   display: flex;
-  align-items: center;
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 19px;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+.center {
+  display: flex;
   justify-content: space-between;
-  width: 88vw;
+  width: 73vw;
   height: 42px;
+  padding: 0 35px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.center_none {
+  opacity: 0;
 }
 .menuIcon {
+  position: absolute;
+  top: 32px;
   width: 27px;
   height: 27px;
-  margin-right: 50px;
-  margin-left: 20px;
+  cursor: pointer;
   color: white;
+}
+.social_links {
+  width: 110px;
+  height: 20px;
+  right: 0;
+  margin-right: 60px;
+  position: absolute;
+  top: 36px;
+}
+.link {
+  margin-left: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  color: grey;
 }
 .logoSearch {
   display: flex;
@@ -65,9 +91,7 @@
 .nextTomorrow {
   display: flex;
   align-items: center;
-  width: 515px;
   height: 42px;
-  margin-right: 70px;
 }
 .next {
   font-size: 12px;
@@ -95,7 +119,7 @@
   font-size: 13px;
   font-weight: 600;
   font-family: "SF Display", sans-serif;
-  background-color: rgb(136, 136, 136);
+  background-color: rgb(185, 185, 185);
 }
 .blue {
   width: 7px;
@@ -104,17 +128,56 @@
   margin-top: 3px;
   margin-left: 8px;
   border-radius: 50px;
+  animation: glow 2s infinite linear;
 }
-@media only screen and (max-width: 835px) {
+@keyframes glow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media only screen and (max-width: 1430px) {
+  .social_links {
+    display: none;
+  }
+}
+@media only screen and (max-width: 830px) {
+  .nextTomorrow {
+    display: flex;
+    justify-content: end;
+  }
+  .tech {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
   .nextTomorrow,
   .input {
     display: none;
   }
+  .header_container{
+    align-items: end;
+    height: 62px;
+  }
   .header {
+    padding: 0 20px;
+    padding: 0;
+    margin: 0;
+  }
+  .center {
+    width: 100%;
     justify-content: end;
+    margin: 0;
+    padding: 0;
   }
   .logoSearch {
     width: 235px;
+    margin-right: 20px;
   }
   .searchIcon {
     color: white;
@@ -124,5 +187,9 @@
   }
   .tech {
     display: none;
+  }
+  .menuIcon {
+    left: 20px;
+    top: 27px;
   }
 }

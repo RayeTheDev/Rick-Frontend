@@ -6,10 +6,13 @@ import image4 from "./assets/image4.jpeg";
 import image5 from "./assets/image5.jpeg";
 import image6 from "./assets/image6.jpeg";
 import image7 from "./assets/image7.jpeg";
+import { useContext } from "react";
+import { DataContext } from "./context/Data.Provider";
 
 export const Grid = () => {
+  const { menu } = useContext(DataContext);
   return (
-    <div className={styles.container}>
+    <div className={ menu ? styles.container : `${styles.container_none}`}>
       <div className={styles.pin_container}>
         <div className={styles.card_extra_large}>
           <img className={styles.card_image} src={image1}></img>
