@@ -10,6 +10,38 @@ export const News = () => {
   const { id } = useParams();
   const [data, setData] = useState();
   const ref = useRef(null);
+  const [limit, setLimit] = useState([]);
+  const [name, setName] = useState([]);
+  const [space, setSpace] = useState(0);
+  const [warn, setWarn] = useState(false);
+  const [ner, setNer] = useState(false);
+  const [comment, setComment] = useState([]);
+
+  const Btn = () => {
+    var my_string = limit;
+    var spaceCount = limit.split(" ").length - 1;
+    const charCount = my_string.length - spaceCount
+    setSpace(charCount);
+
+    if (charCount < 100) {
+      console.log("less than 100");
+      setWarn(false);
+    } else {
+      console.log("100 gass ih");
+      setWarn(true);
+    }
+    const newComment = { limit: limit, name: name ? name : "Зочин" };
+    setComment([...comment, newComment]);
+
+    if (!name) {
+      console.log("noname");
+      setNer(false);
+    } else {
+      console.log("ner");
+      setNer(true);
+    }
+  };
+  
   useEffect(() => {
     axios
       .get(`http://localhost:3100/articles/${id}`)
