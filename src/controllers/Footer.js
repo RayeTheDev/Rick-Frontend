@@ -4,8 +4,13 @@ import { AiOutlineTwitter } from "react-icons/ai";
 import { BsInstagram } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 import { BsFillCloudFog2Fill } from "react-icons/bs";
+import { useContext } from "react";
+import { DataContext } from "./context/Data.Provider";
+
+
 export const Footer = () => {
-  return (
+  const { none } = useContext(DataContext)
+  return (!none &&
     <>
       <div className={styles.back}>
         <div className={styles.width}>
@@ -17,14 +22,14 @@ export const Footer = () => {
                   className={styles.image}
                 ></img>
                 <div className={styles.card}>
-                  <p style={{ color: "gray", fontSize: "13px" }}>
+                  <p className={styles.boxText}>
                     {" "}
                     Хамтран ажиллах хүсэлт илгээх
                   </p>
                   <p className={styles.rep}>Контент нийтлүүлэх</p>
                 </div>
                 <div className={styles.card}>
-                  <p style={{ color: "gray", fontSize: "13px" }}>
+                  <p className={styles.boxText}>
                     {" "}
                     Хамтран ажиллах хүсэлт илгээх
                   </p>
@@ -34,10 +39,16 @@ export const Footer = () => {
             </div>
             <div className={styles.lai3}>
               <div className={styles.mini}>
-                <p>Редакцийн бодлого</p>
-                <p>Влок</p>
-                <p className={styles.ajil}>Ажлийн байр</p>
-                <p>Холбогдох</p>
+                <p className={styles.topTexts}>Редакцийн бодлого</p>
+                <p>•</p>
+                <p className={styles.topTexts}>Влок</p>
+                <p>•</p>
+                <p className={styles.topTexts}>Ажлийн байр</p>
+                <p>•</p>
+                <p className={styles.topTexts}>Холбогдох</p>
+              </div>
+              <div className={styles.copyCont}>
+                <span className={styles.copyrightText}>© 2015-2023 Анрид Медиа ХХК. Бүх эрх хуулиар хамгаалагдсан. Контентуудыг зөвшөөрөлгүйгээр болон дурдалгүйгээр нийтлэх, хэвлэх, эш татахыг хориглоно.</span>
               </div>
               <div className={styles.threepart}>
                 <div className={styles.arhi}>
@@ -67,7 +78,7 @@ export const Footer = () => {
                   </div>
                 </div>
                 <div className={styles.part3}>
-                  <h3>company</h3>
+                  <h3>Компани</h3>
                   <p className={styles.address}>
                     Улаанбаатар 14240 СБД, 8-р хороо, Амарын гудамж, Тэнгэрлиг
                     медиа групп

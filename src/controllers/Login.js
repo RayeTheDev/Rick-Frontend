@@ -29,11 +29,11 @@ export const Login = () => {
 
 
   useEffect(
-    ()=>{
-      if(localStorage.USER_TOKEN){
+    () => {
+      if (localStorage.USER_TOKEN) {
         navigate('/create')
       }
-    },[]
+    }, []
   )
 
   const onSubmit = (e) => {
@@ -59,11 +59,28 @@ export const Login = () => {
           }, 3000);
         } else {
           localStorage.setItem("USER_TOKEN", res.data.userId);
-          setLoading(true);
-          setTimeout(() => {
-            setLoading(false);
-            navigate("/create");
-          }, 3000);
+          client
+            .get("/user/" + res.data.userId)
+            .then((res) => {
+              console.log(res.data.roles);
+              if (res.data.roles == { Admin: 401 }) {
+                setLoading(true);
+                setTimeout(() => {
+                  setLoading(false);
+                  navigate('/create')
+                }, 3000);
+              } else {
+                setLoading(true);
+                setTimeout(() => {
+                  setLoading(false);
+                  navigate("/");
+                }, 3000);
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+
         }
       })
       .catch((err) => {
@@ -73,27 +90,7 @@ export const Login = () => {
   };
 
   return (
-    // <div className={styles.one}>
-    //   <div className={styles.just}>
-    //   <div className={styles.login_page}>
-    //     <div className={styles.intro_1}>
-    //         <p className={styles.login_style}>Login to Your Account</p>
-    //         <input placeholder="email"></input>
-    //         <input placeholder="password"></input>
-    //         <a href="#">forget password</a>
-    //         <button className={styles.btn_1}>sign in</button>
 
-    //     </div>
-    //   </div>
-    //   </div>
-    //   <div className={styles.go_signup}>
-    //     <div className={styles.intro}>
-    //         <p className={styles.new_font}>New Here?</p>
-    //         <p className={styles.sign_font}>Sign up and discover a great amount of new opportunities!!!</p>
-    //         <div className={styles.btn_2}><Link to="/Signup">sign up </Link></div>
-    //     </div>
-    //   </div>
-    // </div>
     <>
       {loading ? (
         <div className={styles.loadingContainer}>

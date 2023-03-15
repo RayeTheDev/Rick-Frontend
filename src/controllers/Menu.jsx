@@ -3,18 +3,19 @@ import { DataContext } from "./context/Data.Provider";
 import { BsDot } from "react-icons/bs";
 import styles from "./styles/Menu.module.css";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mantine/core";
 
 export const Menu = () => {
-  const { menu } = useContext(DataContext);
-  const Navigate=useNavigate()
+  const { menu, user, signOut } = useContext(DataContext);
+  const Navigate = useNavigate();
+  console.log(user);
   return (
     <div
       className={
         !menu
           ? `${styles.menu_container_open}`
           : `${styles.menu_container_close}`
-      }
-    >
+      }>
       <div className={styles.menu}>
         <div className={styles.first_second}>
           <div className={styles.first}>
@@ -63,9 +64,19 @@ export const Menu = () => {
           </div>
         </div>
         <div className={styles.main_footer}>
-          <div className={styles.first} onClick={()=>{Navigate("/login")}}>
+          <div
+            className={styles.first}
+            onClick={() => {
+              Navigate("/login");
+            }}>
             <p className={styles.p1}>Хамтран ажиллах хүсэлт илгээх</p>
             <h3 className={styles.h3}>КОНТЕНТ НИЙТЛҮҮЛЭХ</h3>
+            {user && (
+              <div className={styles.profileCont}>
+                <span>{user.username.first + " " + user.username.last}</span>
+                <Button onClick={signOut}>Logout</Button>
+              </div>
+            )}
           </div>
           <div className={styles.second}>
             <p className={styles.p1}>Хамтран ажиллах хүсэлт илгээх</p>
@@ -88,6 +99,8 @@ export const Menu = () => {
             эш татахыг хориглоно.
           </p>
         </div>
+
+        <div></div>
       </div>
     </div>
   );

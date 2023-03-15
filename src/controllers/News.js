@@ -6,6 +6,7 @@ import { Footer } from "./Footer";
 import { useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { Header } from "./Header";
 export const News = () => {
   const { id } = useParams();
   const [data, setData] = useState();
@@ -34,7 +35,7 @@ export const News = () => {
       setWarn(true);
       console.log(commentDiv);
       axios.post("https://unread.onrender.com/comments/", commentDiv).then((res) => {
-        console.log("Comment posted", res.data)
+
         setComment([...comment, res.data])
       }).catch((err) => { console.log(err) })
     }
@@ -52,14 +53,13 @@ export const News = () => {
     axios
       .get(`https://unread.onrender.com/articles/${id}`)
       .then((res) => {
-        console.log(res.data);
+
         setData(res.data.result);
         setComment(res.data.comment);
         console.log("comment", res.data);
         axios
           .get(`https://unread.onrender.com/user/${res.data.result.creatorId}`)
           .then((res) => {
-            console.log(res.data);
             setUser(res.data);
           })
           .catch((error) => {
@@ -77,12 +77,14 @@ export const News = () => {
   return (
     data && (
       <>
+        <Header />
         <div className={styles.flex}>
           <div className={styles.width}>
             <div className={styles.padding}>
               <p
                 style={{
                   color: "#0078f6",
+                  fontWeight: "bold",
                   fontSize: "13px",
                   paddingRight: "20px",
                 }}
@@ -91,8 +93,7 @@ export const News = () => {
               </p>
               <p style={{ color: " #6d7378", fontSize: "13px" }}>
                 {" "}
-                {/* 2 САРЫН 26, 2023. 9 МИН
-                 */}
+
                 {data.createdAt}
               </p>
             </div>
@@ -110,12 +111,12 @@ export const News = () => {
                 )}
 
                 <div className={styles.nii}>
-                  <p style={{ color: "#888888", fontSize: "12px" }}>
+                  <span style={{ color: "#888888", fontSize: "12px" }}>
                     Нийтэлсэн:
-                  </p>
-                  <p style={{ fontSize: "15px" }}>
+                  </span>
+                  <span style={{ fontSize: "15px" }}>
                     {user && user.username.first + " " + user.username.last}
-                  </p>
+                  </span>
                 </div>
               </div>
               <div className={styles.help}>
@@ -227,7 +228,7 @@ export const News = () => {
             </div>
             <div className={styles.setgegdel}>
               {comment.map((give) => {
-                console.log(give);
+
                 return (
                   <div className={styles.opp}>
                     <div className={styles.pl}>
